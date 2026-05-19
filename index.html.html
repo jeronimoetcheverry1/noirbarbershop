@@ -1,0 +1,2187 @@
+<html lang="es"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NOIR Barbershop — Providencia, Santiago</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&amp;family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&amp;family=Cormorant+Garamond:ital,wght@0,300;0,400;1,400&amp;display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:      #f5f0e8;
+  --bg2:     #ede7da;
+  --bg3:     #e4dcd0;
+  --accent:  #7a1c2e;
+  --accent2: #9c2d3f;
+  --warm:    #c4943a;
+  --text:    #1a0f08;
+  --muted:   #7a6255;
+  --border:  #cfc3af;
+  --radius:  4px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Crimson Text',Georgia,serif;overflow-x:hidden;line-height:1.7;font-size:17px}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:22px 48px;display:flex;align-items:center;justify-content:space-between;transition:all .3s}
+nav.scrolled{background:rgba(245,240,232,.97);backdrop-filter:blur(12px);padding:14px 48px;border-bottom:1px solid var(--border);box-shadow:0 2px 20px rgba(26,15,8,.06)}
+.nav-logo{font-family:'Playfair Display',serif;font-style:italic;font-size:22px;letter-spacing:2px;color:var(--accent);text-decoration:none}
+.nav-links{display:flex;align-items:center;gap:36px}
+.nav-links a{color:var(--muted);text-decoration:none;font-family:'Crimson Text',serif;font-size:15px;letter-spacing:1px;transition:color .2s}
+.nav-links a:hover{color:var(--accent)}
+.nav-cta{background:var(--accent);color:#f5f0e8 !important;padding:9px 24px;border-radius:var(--radius);font-size:14px;font-family:'Crimson Text',serif;letter-spacing:.5px;transition:background .2s !important}
+.nav-cta:hover{background:var(--accent2) !important}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;z-index:101}
+.hamburger span{width:22px;height:1px;background:var(--text);transition:all .3s;display:block}
+@media(max-width:768px){
+  nav{padding:16px 20px}
+  nav.scrolled{padding:12px 20px}
+  .nav-links{display:none;position:fixed;inset:0;background:rgba(245,240,232,.98);flex-direction:column;justify-content:center;align-items:center;gap:40px;z-index:100}
+  .nav-links.open{display:flex}
+  .nav-links a{font-size:20px}
+  .hamburger{display:flex}
+}
+
+/* HERO */
+#hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center;filter:sepia(30%) brightness(0.65) contrast(1.1)}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(26,15,8,.4) 0%,rgba(26,15,8,.65) 55%,rgba(26,15,8,.92) 100%)}
+.hero-content{position:relative;z-index:2;text-align:center;padding:120px 24px 80px;max-width:860px}
+.hero-eyebrow{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;letter-spacing:3px;color:rgba(245,240,232,.75);margin-bottom:20px}
+.hero-ornament{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:20px}
+.hero-ornament-line{flex:1;max-width:80px;height:1px;background:var(--warm);opacity:.6}
+.hero-ornament-icon{color:var(--warm);opacity:.8}
+.hero-ornament-icon svg{width:18px;height:18px;stroke:currentColor;fill:none}
+.hero-title{font-family:'Playfair Display',serif;font-size:clamp(64px,12vw,140px);line-height:.95;color:#f5f0e8;margin-bottom:10px;font-weight:700}
+.hero-title em{font-style:italic;color:var(--warm)}
+.hero-tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(17px,2.5vw,24px);color:rgba(245,240,232,.65);margin:24px 0 48px;letter-spacing:.5px}
+.hero-ctas{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.btn-hero-primary{background:var(--accent);color:#f5f0e8;padding:14px 40px;border-radius:var(--radius);font-family:'Crimson Text',serif;font-size:16px;letter-spacing:1px;text-decoration:none;transition:background .2s;border:1px solid var(--accent)}
+.btn-hero-primary:hover{background:var(--accent2);border-color:var(--accent2)}
+.btn-hero-ghost{border:1px solid rgba(245,240,232,.4);color:#f5f0e8;padding:14px 40px;border-radius:var(--radius);font-family:'Crimson Text',serif;font-size:16px;letter-spacing:1px;text-decoration:none;transition:all .2s}
+.btn-hero-ghost:hover{border-color:var(--warm);color:var(--warm)}
+.hero-scroll{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(245,240,232,.4);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;letter-spacing:2px;z-index:2}
+.scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,var(--warm),transparent);animation:scrollPulse 2s ease-in-out infinite;opacity:.6}
+@keyframes scrollPulse{0%,100%{opacity:.2}50%{opacity:.7}}
+
+/* SECTIONS */
+section{padding:100px 48px}
+@media(max-width:768px){section{padding:60px 20px}}
+.section-eyebrow{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;letter-spacing:2px;color:var(--warm);margin-bottom:8px}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(36px,5vw,60px);line-height:1.15;margin-bottom:16px;font-weight:700;color:var(--text)}
+.section-title em{font-style:italic;color:var(--accent)}
+.ornament{display:flex;align-items:center;gap:14px;margin-bottom:40px}
+.ornament-line{flex:0 0 40px;height:1px;background:var(--border)}
+.ornament-diamond{width:6px;height:6px;border:1px solid var(--warm);transform:rotate(45deg);flex-shrink:0}
+.ornament-text{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;color:var(--muted);letter-spacing:1px}
+.gold-line{width:48px;height:1px;background:var(--warm);margin-bottom:32px;opacity:.7}
+
+/* GALLERY */
+#galeria{background:var(--bg)}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;max-width:1100px;margin:0 auto;border:1px solid var(--border)}
+@media(max-width:600px){.gallery-grid{grid-template-columns:repeat(2,1fr)}}
+.gallery-item{position:relative;aspect-ratio:1;overflow:hidden;cursor:pointer}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;filter:sepia(15%) contrast(1.05)}
+.gallery-item:hover img{transform:scale(1.06);filter:sepia(0%) contrast(1.05)}
+.gallery-overlay{position:absolute;inset:0;background:rgba(26,15,8,.45);opacity:0;display:flex;align-items:center;justify-content:center;transition:opacity .3s}
+.gallery-item:hover .gallery-overlay{opacity:1}
+.gallery-overlay svg{width:26px;height:26px;stroke:#f5f0e8;fill:none}
+
+/* LIGHTBOX */
+#lightbox{position:fixed;inset:0;background:rgba(26,15,8,.97);z-index:200;display:none;align-items:center;justify-content:center}
+#lightbox.open{display:flex}
+#lightbox img{max-width:90vw;max-height:90vh;object-fit:contain;border-radius:2px;border:1px solid rgba(196,148,58,.3)}
+#lightbox-close{position:absolute;top:20px;right:24px;background:none;border:none;color:#f5f0e8;font-size:30px;cursor:pointer;line-height:1;opacity:.6;transition:opacity .2s;font-family:'Playfair Display',serif}
+#lightbox-close:hover{opacity:1}
+#lightbox-prev,#lightbox-next{position:absolute;top:50%;transform:translateY(-50%);background:rgba(245,240,232,.07);border:1px solid rgba(245,240,232,.15);color:#f5f0e8;font-size:22px;padding:16px 18px;cursor:pointer;border-radius:2px;transition:background .2s;font-family:'Playfair Display',serif}
+#lightbox-prev{left:16px}#lightbox-next{right:16px}
+#lightbox-prev:hover,#lightbox-next:hover{background:rgba(245,240,232,.15)}
+
+/* SERVICES */
+#servicios{background:var(--bg2)}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2px;max-width:1100px;margin:0 auto;border:1px solid var(--border)}
+.service-card{background:var(--bg2);padding:36px 32px;position:relative;cursor:pointer;transition:background .3s;border-right:1px solid var(--border);border-bottom:1px solid var(--border);display:flex;flex-direction:column}
+.service-card:hover{background:var(--bg)}
+.service-card::after{content:'';position:absolute;bottom:0;left:32px;right:32px;height:1px;background:linear-gradient(90deg,transparent,var(--warm),transparent);opacity:0;transition:opacity .3s}
+.service-card:hover::after{opacity:.5}
+.service-icon{width:36px;height:36px;margin-bottom:20px;color:var(--warm)}
+.service-icon svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.25;stroke-linecap:round;stroke-linejoin:round}
+.service-name{font-family:'Playfair Display',serif;font-size:20px;margin-bottom:10px;font-weight:500;color:var(--text)}
+.service-desc{font-size:15px;color:var(--muted);margin-bottom:24px;line-height:1.8;font-style:italic;flex:1}
+.service-meta{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:20px}
+.service-price{font-family:'Playfair Display',serif;font-size:22px;color:var(--accent);font-weight:600}
+.service-duration{font-size:13px;color:var(--muted);padding-bottom:3px;font-style:italic}
+.service-btn{background:transparent;border:1px solid var(--border);color:var(--muted);padding:9px 0;border-radius:var(--radius);font-family:'Crimson Text',serif;font-size:14px;letter-spacing:.5px;cursor:pointer;transition:all .2s;width:100%}
+.service-btn:hover{background:var(--accent);color:#f5f0e8;border-color:var(--accent)}
+
+/* TEAM */
+#equipo{background:var(--bg)}
+.team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2px;max-width:900px;margin:0 auto;border:1px solid var(--border)}
+.barber-card{text-align:center;background:var(--bg);padding:44px 28px;transition:background .3s;border-right:1px solid var(--border);border-bottom:1px solid var(--border)}
+.barber-card:hover{background:var(--bg2)}
+.barber-photo{width:100px;height:100px;border-radius:50%;overflow:hidden;margin:0 auto 20px;border:1px solid var(--border);outline:4px solid var(--bg2);outline-offset:3px;display:flex;align-items:center;justify-content:center;background:var(--bg3);flex-shrink:0}
+.barber-photo img{width:100%;height:100%;object-fit:cover;filter:sepia(10%);flex-shrink:0}
+.barber-photo-init{font-family:'Playfair Display',serif;font-size:36px;color:var(--muted);font-style:italic;display:flex;align-items:center;justify-content:center;width:100%;height:100%}
+.barber-name{font-family:'Playfair Display',serif;font-size:20px;margin-bottom:4px;font-weight:500}
+.barber-role{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;color:var(--warm);letter-spacing:1px;margin-bottom:8px}
+.barber-spec{font-size:14px;color:var(--muted);font-style:italic}
+
+/* BOOKING */
+#reservar{background:var(--bg2)}
+.booking-container{max-width:680px;margin:0 auto}
+.steps-indicator{display:flex;align-items:center;margin-bottom:48px}
+.step-dot{width:28px;height:28px;border-radius:50%;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:'Crimson Text',serif;font-size:13px;color:var(--muted);transition:all .3s;flex-shrink:0;background:var(--bg2)}
+.step-dot.active{border-color:var(--accent);background:var(--accent);color:#f5f0e8}
+.step-dot.done{border-color:var(--warm);color:var(--warm);background:var(--bg2)}
+.step-line{flex:1;height:1px;background:var(--border);margin:0 6px;transition:background .3s}
+.step-line.done{background:var(--warm)}
+.booking-step{display:none;animation:fadeSlide .35s ease}
+.booking-step.active{display:block}
+@keyframes fadeSlide{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.step-title{font-family:'Playfair Display',serif;font-size:26px;margin-bottom:24px;color:var(--accent);font-style:italic;font-weight:400}
+.options-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(175px,1fr));gap:2px;margin-bottom:24px;border:1px solid var(--border)}
+.option-card{background:var(--bg2);border-right:1px solid var(--border);border-bottom:1px solid var(--border);padding:18px;cursor:pointer;transition:background .2s}
+.option-card:hover{background:var(--bg)}
+.option-card.selected{background:var(--bg);outline:1px solid var(--accent);outline-offset:-1px}
+.option-card .name{font-family:'Playfair Display',serif;font-weight:500;font-size:15px;margin-bottom:4px}
+.option-card .sub{font-size:13px;color:var(--muted);font-style:italic}
+.option-card .price{font-family:'Playfair Display',serif;font-size:17px;color:var(--accent);margin-top:8px;font-weight:600}
+
+/* Calendar */
+.calendar-wrap{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin-bottom:24px}
+.cal-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+.cal-title{font-family:'Playfair Display',serif;font-size:17px;color:var(--text)}
+.cal-nav{background:none;border:1px solid var(--border);color:var(--muted);width:30px;height:30px;border-radius:2px;cursor:pointer;font-size:16px;transition:all .2s;font-family:'Playfair Display',serif}
+.cal-nav:hover{border-color:var(--accent);color:var(--accent)}
+.cal-days-header{display:grid;grid-template-columns:repeat(7,1fr);text-align:center;margin-bottom:8px}
+.cal-days-header span{font-family:'Crimson Text',serif;font-size:12px;color:var(--muted);letter-spacing:.5px;padding:4px 0}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:2px}
+.cal-day{aspect-ratio:1;display:flex;align-items:center;justify-content:center;border-radius:2px;font-family:'Crimson Text',serif;font-size:14px;cursor:pointer;transition:all .2s;border:1px solid transparent}
+.cal-day.empty{cursor:default}
+.cal-day.past{color:var(--border);cursor:not-allowed}
+.cal-day.closed{color:var(--border);cursor:not-allowed;text-decoration:line-through}
+.cal-day.available:hover{border-color:var(--accent);color:var(--accent);background:rgba(122,28,46,.05)}
+.cal-day.today{color:var(--accent);font-weight:600}
+.cal-day.selected{background:var(--accent);color:#f5f0e8;border-color:var(--accent)}
+
+/* Time slots */
+.slots-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:24px}
+@media(max-width:480px){.slots-grid{grid-template-columns:repeat(3,1fr)}}
+.slot{background:var(--bg);border:1px solid var(--border);border-radius:2px;padding:10px;text-align:center;font-family:'Crimson Text',serif;font-size:15px;cursor:pointer;transition:all .2s}
+.slot:hover:not(.taken){border-color:var(--accent);color:var(--accent)}
+.slot.selected{background:var(--accent);color:#f5f0e8;border-color:var(--accent)}
+.slot.taken{opacity:.3;cursor:not-allowed;text-decoration:line-through}
+
+/* Form */
+.form-group{margin-bottom:18px}
+.form-group label{display:block;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;letter-spacing:.5px;color:var(--muted);margin-bottom:6px}
+.form-group input,.form-group textarea{width:100%;background:var(--bg);border:1px solid var(--border);color:var(--text);padding:12px 14px;border-radius:var(--radius);font-family:'Crimson Text',serif;font-size:16px;transition:border-color .2s;outline:none}
+.form-group input:focus,.form-group textarea:focus{border-color:var(--accent)}
+.form-group textarea{height:90px;resize:none}
+.form-group input::placeholder,.form-group textarea::placeholder{color:var(--border)}
+
+/* Buttons */
+.btn-gold{background:var(--accent);color:#f5f0e8;border:none;padding:13px 32px;border-radius:var(--radius);font-family:'Crimson Text',serif;font-size:16px;letter-spacing:.5px;cursor:pointer;transition:background .2s;width:100%}
+.btn-gold:hover{background:var(--accent2)}
+.btn-outline{background:transparent;color:var(--muted);border:1px solid var(--border);padding:11px 24px;border-radius:var(--radius);font-family:'Crimson Text',serif;font-size:15px;cursor:pointer;transition:all .2s;margin-top:10px;width:100%}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent)}
+
+/* Confirmation */
+.confirmation-box{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:28px;margin-bottom:24px}
+.conf-row{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(207,195,175,.5);font-size:15px}
+.conf-row:last-child{border-bottom:none}
+.conf-label{color:var(--muted);font-style:italic}
+.conf-value{font-weight:600;text-align:right;max-width:60%;font-family:'Playfair Display',serif;font-size:15px}
+
+/* Email preview */
+.email-preview{background:var(--bg);border:1px solid rgba(196,148,58,.4);border-radius:var(--radius);padding:20px;margin:20px 0}
+.email-preview-label{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;letter-spacing:.5px;color:var(--warm);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.email-preview-label svg{width:14px;height:14px;stroke:currentColor;fill:none;flex-shrink:0}
+.email-preview-subject{font-family:'Playfair Display',serif;font-size:14px;margin-bottom:6px;color:var(--text)}
+.email-preview-body{font-size:14px;color:var(--muted);line-height:1.7;font-style:italic}
+
+/* Success */
+.success-box{text-align:center;padding:48px 20px}
+.success-icon{width:60px;height:60px;border:1px solid var(--warm);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px}
+.success-icon svg{width:26px;height:26px;stroke:var(--warm);fill:none;stroke-width:1.5}
+.success-id{font-family:'Playfair Display',serif;font-size:28px;color:var(--accent);letter-spacing:3px;margin-bottom:6px;font-style:italic}
+.success-heading{font-family:'Playfair Display',serif;font-size:20px;margin-bottom:12px;font-weight:500}
+.success-msg{color:var(--muted);font-size:15px;margin-bottom:32px;line-height:1.9;font-style:italic}
+.success-actions{display:flex;flex-direction:column;gap:10px}
+.btn-wa{display:flex;align-items:center;justify-content:center;gap:10px;background:#25D366;color:#fff;padding:13px;border-radius:var(--radius);text-decoration:none;font-family:'Crimson Text',serif;font-size:16px}
+.btn-cal{display:flex;align-items:center;justify-content:center;gap:10px;background:var(--bg);color:var(--accent);border:1px solid var(--border);padding:13px;border-radius:var(--radius);text-decoration:none;font-family:'Crimson Text',serif;font-size:16px}
+.btn-wa svg,.btn-cal svg{width:18px;height:18px;fill:currentColor;flex-shrink:0}
+
+/* ADMIN */
+#admin-panel{position:fixed;inset:0;background:rgba(26,15,8,.97);z-index:150;display:none;flex-direction:column}
+#admin-panel.open{display:flex}
+#admin-login{display:flex;align-items:center;justify-content:center;height:100%;padding:20px;position:relative}
+#admin-login-box{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:48px;width:100%;max-width:380px;text-align:center}
+.admin-lock-icon{width:44px;height:44px;margin:0 auto 20px;color:var(--warm)}
+.admin-lock-icon svg{width:100%;height:100%;stroke:currentColor;fill:none;stroke-width:1.25}
+#admin-login-box h2{font-family:'Playfair Display',serif;font-size:26px;margin-bottom:8px;font-style:italic;color:var(--text)}
+#admin-login-box p{color:var(--muted);font-size:15px;margin-bottom:28px;font-style:italic}
+#admin-password{width:100%;background:var(--bg);border:1px solid var(--border);color:var(--text);padding:13px 16px;border-radius:var(--radius);font-family:'Crimson Text',serif;font-size:16px;outline:none;margin-bottom:12px}
+#admin-password:focus{border-color:var(--accent)}
+#admin-error{color:var(--accent);font-size:14px;margin-bottom:12px;display:none;font-style:italic}
+#admin-close-btn{position:absolute;top:20px;right:24px;background:none;border:none;color:rgba(245,240,232,.4);font-size:28px;cursor:pointer;line-height:1;font-family:'Playfair Display',serif;transition:color .2s}
+#admin-close-btn:hover{color:rgba(245,240,232,.8)}
+
+#admin-content{display:none;flex-direction:column;height:100%;overflow:hidden}
+#admin-content.open{display:flex}
+.admin-header{background:var(--bg2);border-bottom:1px solid var(--border);padding:16px 28px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;flex-shrink:0}
+.admin-title-wrap{display:flex;align-items:center;gap:10px}
+.admin-title{font-family:'Playfair Display',serif;font-size:18px;font-style:italic;color:var(--text)}
+.admin-badge{background:var(--accent);color:#f5f0e8;border-radius:20px;padding:2px 10px;font-size:11px;font-weight:600;min-width:22px;font-family:'Crimson Text',serif}
+.admin-tabs{display:flex;gap:6px}
+.admin-tab{background:none;border:1px solid var(--border);color:var(--muted);padding:7px 16px;border-radius:var(--radius);font-family:'Crimson Text',serif;font-size:14px;cursor:pointer;letter-spacing:.3px;transition:all .2s}
+.admin-tab.active{background:var(--accent);color:#f5f0e8;border-color:var(--accent)}
+.admin-logout{background:none;border:1px solid var(--border);color:var(--muted);padding:7px 14px;border-radius:var(--radius);font-family:'Crimson Text',serif;font-size:14px;cursor:pointer;transition:all .2s}
+.admin-logout:hover{border-color:var(--accent);color:var(--accent)}
+.admin-body{flex:1;overflow-y:auto;padding:24px 28px;background:var(--bg)}
+
+.filter-bar{display:flex;gap:8px;margin-bottom:24px;flex-wrap:wrap;align-items:center}
+.filter-btn{background:var(--bg2);border:1px solid var(--border);color:var(--muted);padding:7px 16px;border-radius:20px;font-family:'Crimson Text',serif;font-size:14px;cursor:pointer;transition:all .2s}
+.filter-btn.active{background:var(--accent);color:#f5f0e8;border-color:var(--accent)}
+.export-btn{background:none;border:1px solid var(--border);color:var(--muted);padding:7px 16px;border-radius:var(--radius);font-family:'Crimson Text',serif;font-size:14px;cursor:pointer;transition:all .2s;margin-left:auto;display:flex;align-items:center;gap:6px}
+.export-btn:hover{border-color:var(--accent);color:var(--accent)}
+.export-btn svg{width:14px;height:14px;stroke:currentColor;fill:none}
+
+.reservation-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:8px;display:grid;grid-template-columns:1fr auto;gap:16px;align-items:start}
+@media(max-width:600px){.reservation-card{grid-template-columns:1fr}}
+.res-id{font-family:'Playfair Display',serif;font-size:14px;font-style:italic;color:var(--accent);margin-bottom:10px}
+.res-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+@media(max-width:500px){.res-grid{grid-template-columns:1fr}}
+.res-field{font-family:'Crimson Text',serif;font-size:15px}
+.res-field span{color:var(--muted);font-size:12px;margin-right:6px;letter-spacing:.3px;font-style:italic}
+.res-actions{display:flex;flex-direction:column;gap:7px;align-items:flex-end}
+.badge{display:inline-block;padding:3px 12px;border-radius:20px;font-family:'Crimson Text',serif;font-size:12px;letter-spacing:.3px;font-style:italic;margin-bottom:6px}
+.badge.pendiente{background:rgba(196,148,58,.1);color:var(--warm);border:1px solid rgba(196,148,58,.3)}
+.badge.completada{background:rgba(60,100,60,.08);color:#3a6040;border:1px solid rgba(60,100,60,.25)}
+.badge.cancelada{background:rgba(122,28,46,.08);color:var(--accent);border:1px solid rgba(122,28,46,.25)}
+.action-btn{background:none;border:1px solid var(--border);color:var(--muted);padding:6px 12px;border-radius:var(--radius);font-family:'Crimson Text',serif;font-size:13px;cursor:pointer;transition:all .2s;white-space:nowrap}
+.action-btn:hover{border-color:var(--accent);color:var(--accent)}
+.action-btn.complete{border-color:rgba(60,100,60,.3);color:#3a6040}
+.action-btn.complete:hover{background:rgba(60,100,60,.07)}
+.action-btn.cancel-btn{border-color:rgba(122,28,46,.3);color:var(--accent)}
+.action-btn.cancel-btn:hover{background:rgba(122,28,46,.07)}
+.empty-state{text-align:center;padding:64px 20px;color:var(--muted);font-style:italic}
+.empty-state svg{width:44px;height:44px;stroke:var(--border);fill:none;margin-bottom:16px}
+
+/* LOCATION */
+#ubicacion{background:var(--bg2)}
+.location-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;max-width:1000px;margin:0 auto;align-items:start}
+@media(max-width:768px){.location-grid{grid-template-columns:1fr}}
+.location-detail{display:flex;align-items:flex-start;gap:16px;margin-bottom:28px}
+.location-ico{width:18px;height:18px;flex-shrink:0;margin-top:4px;color:var(--warm)}
+.location-ico svg{width:100%;height:100%;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round}
+.location-detail strong{display:block;font-family:'Playfair Display',serif;font-size:15px;margin-bottom:3px;font-weight:500}
+.location-detail span{color:var(--muted);font-size:14px;font-style:italic}
+.hours-table{width:100%;margin-top:8px}
+.hours-row{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid rgba(207,195,175,.5);font-size:15px}
+.hours-row:last-child{border-bottom:none}
+.hours-day{color:var(--muted);font-style:italic}
+.hours-time{font-family:'Playfair Display',serif;font-weight:500;font-size:14px}
+.hours-time.closed{color:var(--accent);font-style:italic;font-family:'Crimson Text',serif;font-weight:400}
+.map-wrap{border-radius:var(--radius);overflow:hidden;border:1px solid var(--border)}
+.map-wrap iframe{display:block;width:100%;height:350px;filter:sepia(25%) saturate(0.9) contrast(1.05)}
+
+/* FOOTER */
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:56px 48px 28px}
+@media(max-width:768px){footer{padding:40px 20px 24px}}
+.footer-top{display:grid;grid-template-columns:1fr 1fr 1fr;gap:48px;margin-bottom:48px;align-items:start}
+@media(max-width:900px){.footer-top{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.footer-top{grid-template-columns:1fr}}
+.footer-logo{font-family:'Playfair Display',serif;font-style:italic;font-size:30px;color:var(--accent);margin-bottom:12px;font-weight:400}
+.footer-tagline{font-size:15px;color:var(--muted);line-height:1.8;font-style:italic}
+.socials{display:flex;gap:10px;margin-top:20px}
+.social-btn{width:36px;height:36px;border:1px solid var(--border);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;color:var(--muted);text-decoration:none;transition:all .2s}
+.social-btn:hover{border-color:var(--accent);color:var(--accent)}
+.social-btn svg{width:16px;height:16px}
+.footer-nav h4{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;letter-spacing:1px;color:var(--muted);margin-bottom:18px}
+.footer-nav a{display:block;color:var(--text);text-decoration:none;font-family:'Crimson Text',serif;font-size:15px;margin-bottom:10px;transition:color .2s;opacity:.75}
+.footer-nav a:hover{color:var(--accent);opacity:1}
+.footer-cta-box{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);padding:32px}
+.footer-cta-box h3{font-family:'Playfair Display',serif;font-size:19px;margin-bottom:10px;font-style:italic;font-weight:500}
+.footer-cta-box p{font-size:14px;color:var(--muted);margin-bottom:20px;line-height:1.8;font-style:italic}
+.footer-cta-box a{display:block;background:var(--accent);color:#f5f0e8;padding:12px;border-radius:var(--radius);font-family:'Crimson Text',serif;font-size:16px;text-align:center;text-decoration:none;transition:background .2s}
+.footer-cta-box a:hover{background:var(--accent2)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:24px;border-top:1px solid var(--border);flex-wrap:wrap;gap:12px}
+.footer-copy{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;color:var(--border)}
+.admin-link{background:none;border:none;color:var(--border);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;cursor:pointer;transition:color .2s;letter-spacing:.5px}
+.admin-link:hover{color:var(--muted)}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .65s ease,transform .65s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:.1s}
+.reveal-delay-2{transition-delay:.2s}
+.reveal-delay-3{transition-delay:.3s}
+.reveal-delay-4{transition-delay:.4s}
+
+/* WA FLOAT */
+.wa-float{position:fixed;bottom:28px;right:28px;width:48px;height:48px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:90;box-shadow:0 4px 20px rgba(37,211,102,.3);text-decoration:none;transition:transform .2s}
+.wa-float:hover{transform:scale(1.1)}
+.wa-float svg{width:24px;height:24px}
+
+/* ADMIN TABS */
+.admin-tab-content{display:none}
+.admin-tab-content.active{display:block}
+
+/* FIREBASE TAB */
+.fb-status-badge{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:20px;font-size:12px;font-family:'Crimson Text',serif;letter-spacing:.5px;margin-bottom:16px}
+.fb-status-badge.connected{background:#d4edda;color:#1a7a3c;border:1px solid #a3d9b1}
+.fb-status-badge.disconnected{background:#fde8e8;color:#9b1c1c;border:1px solid #f5c6c6}
+.fb-status-badge.connecting{background:#fff3cd;color:#856404;border:1px solid #ffe082}
+.fb-dot{width:7px;height:7px;border-radius:50%;background:currentColor}
+.fb-section{background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:20px;margin-bottom:16px}
+.fb-section h4{font-family:'Playfair Display',serif;font-size:15px;color:var(--accent);margin-bottom:12px}
+.fb-textarea{width:100%;min-height:120px;padding:10px;font-family:'Crimson Text',serif;font-size:13px;border:1px solid var(--border);border-radius:4px;background:var(--bg3);color:var(--text);resize:vertical;line-height:1.5}
+.fb-textarea:focus{outline:none;border-color:var(--warm)}
+.fb-input{width:100%;padding:9px 12px;font-family:'Crimson Text',serif;font-size:14px;border:1px solid var(--border);border-radius:4px;background:var(--bg3);color:var(--text)}
+.fb-input:focus{outline:none;border-color:var(--warm)}
+.fb-btn-primary{background:var(--accent);color:#f5f0e8;border:none;padding:10px 24px;border-radius:4px;font-family:'Crimson Text',serif;font-size:14px;cursor:pointer;transition:background .2s}
+.fb-btn-primary:hover{background:var(--accent2)}
+.fb-btn-secondary{background:transparent;color:var(--accent);border:1px solid var(--accent);padding:9px 20px;border-radius:4px;font-family:'Crimson Text',serif;font-size:14px;cursor:pointer;transition:all .2s;margin-left:8px}
+.fb-btn-secondary:hover{background:var(--accent);color:#f5f0e8}
+.fb-hint{font-size:12px;color:var(--muted);margin-top:6px;font-family:'Cormorant Garamond',serif;font-style:italic}
+.fb-label{display:block;font-size:13px;color:var(--muted);margin-bottom:4px;font-family:'Crimson Text',serif}
+.fb-field{margin-bottom:14px}
+.fb-alert{padding:10px 14px;border-radius:4px;font-size:13px;font-family:'Crimson Text',serif;margin-bottom:12px;display:none}
+.fb-alert.error{background:#fde8e8;color:#9b1c1c;border:1px solid #f5c6c6}
+.fb-alert.success{background:#d4edda;color:#1a7a3c;border:1px solid #a3d9b1}
+.fb-checklist{list-style:none;padding:0;margin:0}
+.fb-checklist li{display:flex;align-items:center;gap:8px;padding:6px 0;font-size:13px;font-family:'Crimson Text',serif;border-bottom:1px solid var(--border)}
+.fb-checklist li:last-child{border-bottom:none}
+.fb-check-icon{font-size:14px}
+
+/* ADMIN CALENDAR */
+.admin-cal-controls{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;gap:12px;flex-wrap:wrap}
+.admin-cal-select{background:var(--bg);border:1px solid var(--border);color:var(--text);padding:7px 12px;border-radius:var(--radius);font-family:'Crimson Text',serif;font-size:14px;cursor:pointer;outline:none;transition:border-color .2s}
+.admin-cal-select:focus{border-color:var(--accent)}
+.admin-cal-nav-wrap{display:flex;align-items:center;gap:10px}
+.admin-cal-title{font-family:'Playfair Display',serif;font-size:16px;font-style:italic;min-width:160px;text-align:center;color:var(--text)}
+.admin-cal-btn{background:none;border:1px solid var(--border);color:var(--muted);width:30px;height:30px;border-radius:2px;cursor:pointer;font-size:17px;transition:all .2s;line-height:1;padding:0}
+.admin-cal-btn:hover{border-color:var(--accent);color:var(--accent)}
+.admin-dow-header{display:grid;grid-template-columns:repeat(7,1fr);text-align:center;margin-bottom:3px}
+.admin-dow-header span{font-family:'Crimson Text',serif;font-size:11px;color:var(--muted);letter-spacing:.5px;padding:3px 0}
+.admin-month-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;margin-bottom:12px}
+.admin-day{min-height:72px;background:var(--bg2);border:1px solid var(--border);padding:4px;cursor:pointer;transition:background .2s;border-radius:2px;overflow:hidden}
+.admin-day:hover:not(.adm-other){background:var(--bg)}
+.admin-day.adm-other{opacity:.2;cursor:default;pointer-events:none}
+.admin-day.adm-today{border-color:rgba(122,28,46,.4)}
+.admin-day.adm-today .adm-num{color:var(--accent);font-weight:700}
+.admin-day.adm-selected{border-color:var(--accent);background:rgba(122,28,46,.04)}
+.adm-num{font-family:'Crimson Text',serif;font-size:11px;color:var(--muted);margin-bottom:2px;line-height:1}
+.res-chip{font-family:'Crimson Text',serif;font-size:10px;padding:1px 4px;border-radius:1px;margin-bottom:1px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;line-height:1.5;display:block}
+.res-chip.pendiente{background:rgba(196,148,58,.15);color:#6e4f14;border-left:2px solid var(--warm)}
+.res-chip.completada{background:rgba(60,100,60,.1);color:#3a6040;border-left:2px solid #5a9060}
+.res-chip.cancelada{opacity:.5;text-decoration:line-through;background:rgba(122,28,46,.06);color:var(--accent)}
+.res-chip.chip-mas{background:var(--bg3);color:var(--muted);font-style:italic;border:none}
+.admin-day-panel{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:16px}
+.admin-day-panel-title{font-family:'Playfair Display',serif;font-size:17px;font-style:italic;margin-bottom:14px;color:var(--accent);font-weight:400}
+
+/* BARBER MANAGEMENT */
+.barberos-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px;margin-bottom:14px}
+.bmcard{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:14px;display:flex;align-items:center;gap:12px}
+.bmphoto{width:42px;height:42px;border-radius:50%;overflow:hidden;flex-shrink:0;border:1px solid var(--border);background:var(--bg3);display:flex;align-items:center;justify-content:center}
+.bmphoto img{width:100%;height:100%;object-fit:cover}
+.bmphoto-init{font-family:'Playfair Display',serif;font-size:16px;color:var(--muted)}
+.bminfo{flex:1;min-width:0}
+.bmname{font-family:'Playfair Display',serif;font-size:13px;font-weight:500;margin-bottom:1px}
+.bmrole{font-size:11px;color:var(--warm);font-style:italic;font-family:'Cormorant Garamond',serif;margin-bottom:2px}
+.bmpin{font-size:11px;color:var(--muted);font-style:italic}
+.bmactions{display:flex;flex-direction:column;gap:5px}
+.btn-mini{background:none;border:1px solid var(--border);color:var(--muted);padding:4px 11px;border-radius:2px;font-family:'Crimson Text',serif;font-size:12px;cursor:pointer;transition:all .2s;white-space:nowrap}
+.btn-mini:hover{border-color:var(--accent);color:var(--accent)}
+.btn-add-barber{background:none;border:1px dashed var(--border);color:var(--muted);padding:13px;border-radius:var(--radius);font-family:'Crimson Text',serif;font-size:15px;cursor:pointer;transition:all .2s;width:100%;display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:14px}
+.btn-add-barber:hover{border-color:var(--accent);color:var(--accent)}
+.btn-add-barber svg{width:14px;height:14px;stroke:currentColor;fill:none}
+.bform{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:14px}
+.bform h4{font-family:'Playfair Display',serif;font-size:17px;font-style:italic;margin-bottom:14px;color:var(--accent);font-weight:400}
+.frow2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:500px){.frow2{grid-template-columns:1fr}}
+
+/* BARBER PANEL */
+#barber-panel{position:fixed;inset:0;background:rgba(26,15,8,.97);z-index:160;display:none;flex-direction:column}
+#barber-panel.open{display:flex}
+#barber-login{display:flex;align-items:center;justify-content:center;height:100%;padding:20px;position:relative}
+#barber-login-box{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:44px;width:100%;max-width:360px;text-align:center}
+#barber-login-box h2{font-family:'Playfair Display',serif;font-size:24px;margin-bottom:6px;font-style:italic;color:var(--text)}
+#barber-login-box p{color:var(--muted);font-size:15px;margin-bottom:22px;font-style:italic}
+#barber-select{width:100%;background:var(--bg);border:1px solid var(--border);color:var(--text);padding:12px 14px;border-radius:var(--radius);font-family:'Crimson Text',serif;font-size:15px;outline:none;margin-bottom:10px;cursor:pointer;transition:border-color .2s}
+#barber-select:focus{border-color:var(--accent)}
+#barber-pin-input{width:100%;background:var(--bg);border:1px solid var(--border);color:var(--text);padding:13px 16px;border-radius:var(--radius);font-family:'Crimson Text',serif;font-size:16px;outline:none;margin-bottom:10px;letter-spacing:4px}
+#barber-pin-input:focus{border-color:var(--accent)}
+#barber-login-error{color:var(--accent);font-size:14px;margin-bottom:10px;font-style:italic;display:none}
+#barber-close-btn{position:absolute;top:20px;right:24px;background:none;border:none;color:rgba(245,240,232,.4);font-size:28px;cursor:pointer;line-height:1;font-family:'Playfair Display',serif;transition:color .2s}
+#barber-close-btn:hover{color:rgba(245,240,232,.8)}
+#barber-content{display:none;flex-direction:column;height:100%;overflow:hidden}
+#barber-content.open{display:flex}
+.barber-today-card{display:flex;align-items:center;gap:16px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:14px 18px;margin-bottom:18px}
+.barber-today-num{font-family:'Playfair Display',serif;font-size:38px;color:var(--accent);font-weight:700;line-height:1;flex-shrink:0}
+.barber-today-label{font-family:'Playfair Display',serif;font-size:14px;font-weight:500;margin-bottom:2px}
+.barber-today-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;color:var(--warm)}
+
+/* ADMIN PHOTO GRID */
+.adm-photo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:8px;margin-bottom:1rem}
+.adm-photo-item{position:relative;border-radius:4px;overflow:hidden;aspect-ratio:1;border:2px solid var(--bg3);cursor:pointer}
+.adm-photo-item.hidden-photo{opacity:.32;border-color:var(--border)}
+.adm-photo-item img{width:100%;height:100%;object-fit:cover;display:block}
+.adm-photo-overlay{position:absolute;inset:0;background:rgba(0,0,0,0);transition:background .2s;display:flex;flex-direction:column;justify-content:space-between;padding:.35rem;pointer-events:none}
+.adm-photo-item:hover .adm-photo-overlay{background:rgba(0,0,0,.55);pointer-events:all}
+.adm-ibtn{background:rgba(0,0,0,.75);border:none;border-radius:4px;width:26px;height:26px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:12px;line-height:1;transition:background .2s}
+.adm-ibtn:hover{background:rgba(122,28,46,.9)}
+.adm-ibtn-row{display:flex;gap:4px}
+.adm-ibtn-top{display:flex;justify-content:flex-end}
+/* HORARIOS */
+.adm-days-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.adm-day-btn{border:1px solid var(--border);background:var(--bg2);color:var(--muted);width:40px;height:40px;border-radius:50%;font-size:.8rem;cursor:pointer;transition:all .2s;font-family:'Crimson Text',serif}
+.adm-day-btn.on{background:var(--accent);border-color:var(--accent);color:#f5f0e8;font-weight:700}
+.adm-horarios-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:16px}
+@media(max-width:500px){.adm-horarios-grid{grid-template-columns:1fr 1fr}}
+.adm-slot-preview{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:12px 16px;font-size:14px;color:var(--muted);font-style:italic;margin-top:12px}
+/* ADD ROW */
+.adm-add-row{display:flex;gap:8px;margin-top:8px}
+.adm-add-row input{flex:1;background:var(--bg);border:1px solid var(--border);color:var(--text);padding:9px 12px;border-radius:var(--radius);font-family:'Crimson Text',serif;font-size:14px;outline:none;transition:border-color .2s}
+.adm-add-row input:focus{border-color:var(--accent)}
+.adm-add-row button{background:var(--accent);color:#f5f0e8;border:none;padding:9px 18px;border-radius:var(--radius);font-family:'Crimson Text',serif;font-size:14px;cursor:pointer;white-space:nowrap;transition:background .2s}
+.adm-add-row button:hover{background:var(--accent2)}
+.adm-section-label{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;color:var(--muted);letter-spacing:.5px;margin-bottom:8px}
+/* ICON PICKER */
+.icon-picker{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.icon-opt{width:40px;height:40px;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg2);cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--muted);transition:all .2s}
+.icon-opt:hover{border-color:var(--warm);color:var(--warm)}
+.icon-opt.selected{border-color:var(--accent);background:rgba(122,28,46,.06);color:var(--accent)}
+.icon-opt svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+/* SERVICIOS ADMIN LIST */
+.svc-list{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+.svc-item{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:12px 16px;display:flex;align-items:center;gap:14px}
+.svc-item.hidden-svc{opacity:.45}
+.svc-item-icon{width:34px;height:34px;border:1px solid var(--border);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;color:var(--warm);flex-shrink:0}
+.svc-item-icon svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.svc-item-info{flex:1;min-width:0}
+.svc-item-name{font-family:'Playfair Display',serif;font-size:14px;font-weight:500;margin-bottom:2px}
+.svc-item-meta{font-size:12px;color:var(--muted);font-style:italic}
+.svc-item-price{font-family:'Playfair Display',serif;font-size:14px;color:var(--accent);font-weight:600;margin-left:auto;flex-shrink:0;padding:0 10px}
+/* ADMIN STATS BAR */
+.adm-stats{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap}
+.adm-stat{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:14px 20px;text-align:center;flex:1;min-width:80px}
+.adm-stat-num{font-family:'Playfair Display',serif;font-size:26px;color:var(--accent);font-weight:700;line-height:1;margin-bottom:2px}
+.adm-stat-lbl{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:12px;color:var(--muted)}
+/* VIEW TOGGLE */
+.adm-view-toggle{display:flex;gap:6px;margin-bottom:16px}
+.adm-view-btn{background:none;border:1px solid var(--border);color:var(--muted);padding:6px 14px;border-radius:var(--radius);font-family:'Crimson Text',serif;font-size:13px;cursor:pointer;transition:all .2s}
+.adm-view-btn.active{background:var(--accent);border-color:var(--accent);color:#f5f0e8}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar" class="scrolled">
+  <a href="#hero" class="nav-logo">Noir Barbershop</a>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+  <div class="nav-links" id="nav-links">
+    <a href="#galeria" onclick="closeMenu()">Galería</a>
+    <a href="#servicios" onclick="closeMenu()">Servicios</a>
+    <a href="#equipo" onclick="closeMenu()">Equipo</a>
+    <a href="#ubicacion" onclick="closeMenu()">Ubicación</a>
+    <a href="#reservar" class="nav-cta" onclick="closeMenu()">Reservar</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg" id="hero-bg"><img src="assets/noir-barbershop/post-5.jpg" alt="NOIR Barbershop" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;filter:sepia(30%) brightness(0.65) contrast(1.1);opacity:1;transition:opacity 1.2s ease;pointer-events:none"><div class="hero-overlay"></div></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow reveal visible">Providencia · Santiago · Est. 2019</div>
+    <div class="hero-ornament reveal reveal-delay-1 visible">
+      <div class="hero-ornament-line"></div>
+      <div class="hero-ornament-icon"><svg viewBox="0 0 24 24"><path d="M6 9l6-6 6 6M6 15l6 6 6-6"></path><line x1="12" y1="3" x2="12" y2="21"></line></svg></div>
+      <div class="hero-ornament-line"></div>
+    </div>
+    <h1 class="hero-title reveal reveal-delay-2 visible">Noir<br><em>Barbershop</em></h1>
+    <p class="hero-tagline reveal reveal-delay-3 visible">Donde cada corte es una obra de arte</p>
+    <div class="hero-ctas reveal reveal-delay-4 visible">
+      <a href="#reservar" class="btn-hero-primary">Reservar turno</a>
+      <a href="#servicios" class="btn-hero-ghost">Ver servicios</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="galeria">
+  <div class="section-eyebrow reveal visible">Portfolio</div>
+  <div class="section-title reveal reveal-delay-1 visible">Nuestro<br><em>trabajo</em></div>
+  <div class="ornament reveal reveal-delay-2 visible">
+    <div class="ornament-line"></div>
+    <div class="ornament-diamond"></div>
+    <div class="ornament-text">Galería de cortes</div>
+    <div class="ornament-diamond"></div>
+    <div class="ornament-line"></div>
+  </div>
+  <div class="gallery-grid" id="gallery-grid"><div class="gallery-item reveal visible"><img src="assets/noir-barbershop/post-1.jpg" alt="Corte clásico" onclick="openLightbox(0)"><div class="gallery-overlay"><svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"></path></svg></div></div><div class="gallery-item reveal reveal-delay-1 visible"><img src="assets/noir-barbershop/post-2.jpg" alt="Fade" onclick="openLightbox(1)"><div class="gallery-overlay"><svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"></path></svg></div></div><div class="gallery-item reveal reveal-delay-2 visible"><img src="assets/noir-barbershop/post-3.jpg" alt="Barba" onclick="openLightbox(2)"><div class="gallery-overlay"><svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"></path></svg></div></div><div class="gallery-item reveal reveal-delay-3 visible"><img src="assets/noir-barbershop/post-4.jpg" alt="Degradado" onclick="openLightbox(3)"><div class="gallery-overlay"><svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"></path></svg></div></div><div class="gallery-item reveal visible"><img src="assets/noir-barbershop/post-5.jpg" alt="Corte moderno" onclick="openLightbox(4)"><div class="gallery-overlay"><svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"></path></svg></div></div><div class="gallery-item reveal reveal-delay-1 visible"><img src="assets/noir-barbershop/post-6.jpg" alt="Afeitado" onclick="openLightbox(5)"><div class="gallery-overlay"><svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"></path></svg></div></div><div class="gallery-item reveal reveal-delay-2 visible"><img src="assets/noir-barbershop/post-7.jpg" alt="Diseño" onclick="openLightbox(6)"><div class="gallery-overlay"><svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"></path></svg></div></div><div class="gallery-item reveal reveal-delay-3 visible"><img src="assets/noir-barbershop/post-8.jpg" alt="Premium" onclick="openLightbox(7)"><div class="gallery-overlay"><svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"></path></svg></div></div><div class="gallery-item reveal visible"><img src="assets/noir-barbershop/post-9.jpg" alt="Urbano" onclick="openLightbox(8)"><div class="gallery-overlay"><svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"></path></svg></div></div></div>
+</section>
+
+<!-- LIGHTBOX -->
+<div id="lightbox">
+  <button id="lightbox-close" onclick="closeLightbox()">×</button>
+  <button id="lightbox-prev" onclick="lightboxNav(-1)">‹</button>
+  <img id="lightbox-img" src="" alt="">
+  <button id="lightbox-next" onclick="lightboxNav(1)">›</button>
+</div>
+
+<!-- SERVICES -->
+<section id="servicios">
+  <div class="section-eyebrow reveal visible">Lo que hacemos</div>
+  <div class="section-title reveal reveal-delay-1 visible">Nuestros<br><em>servicios</em></div>
+  <div class="ornament reveal reveal-delay-2 visible">
+    <div class="ornament-line"></div>
+    <div class="ornament-diamond"></div>
+    <div class="ornament-text">Arte en cada visita</div>
+    <div class="ornament-diamond"></div>
+    <div class="ornament-line"></div>
+  </div>
+  <div class="services-grid" id="services-grid">
+      <div class="service-card reveal visible" onclick="selectService('Corte Clásico')">
+        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M6 9l6-6 6 6M6 15l6 6 6-6"></path><line x1="12" y1="3" x2="12" y2="21"></line></svg></div>
+        <div class="service-name">Corte Clásico</div>
+        <div class="service-desc">Corte preciso con tijera y máquina. Incluye lavado, secado y styling final.</div>
+        <div class="service-meta">
+          <div class="service-price">$12.000</div>
+          <div class="service-duration">45 min</div>
+        </div>
+        <button class="service-btn">Reservar este servicio</button>
+      </div>
+      <div class="service-card reveal reveal-delay-1 visible" onclick="selectService('Corte + Barba')">
+        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M3 21l18-9L3 3v7l13 2-13 2v7z"></path></svg></div>
+        <div class="service-name">Corte + Barba</div>
+        <div class="service-desc">La experiencia completa. Corte premium más perfilado y arreglo de barba con navaja.</div>
+        <div class="service-meta">
+          <div class="service-price">$18.000</div>
+          <div class="service-duration">75 min</div>
+        </div>
+        <button class="service-btn">Reservar este servicio</button>
+      </div>
+      <div class="service-card reveal reveal-delay-2 visible" onclick="selectService('Afeitado con Navaja')">
+        <div class="service-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+        <div class="service-name">Afeitado con Navaja</div>
+        <div class="service-desc">Afeitado clásico con toalla caliente, aceite y navaja de hoja recta. Una experiencia única.</div>
+        <div class="service-meta">
+          <div class="service-price">$10.000</div>
+          <div class="service-duration">45 min</div>
+        </div>
+        <button class="service-btn">Reservar este servicio</button>
+      </div>
+      <div class="service-card reveal reveal-delay-3 visible" onclick="selectService('Tratamiento de Barba')">
+        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></div>
+        <div class="service-name">Tratamiento de Barba</div>
+        <div class="service-desc">Hidratación profunda, aceites esenciales y perfilado para mantener tu barba en su mejor estado.</div>
+        <div class="service-meta">
+          <div class="service-price">$8.000</div>
+          <div class="service-duration">30 min</div>
+        </div>
+        <button class="service-btn">Reservar este servicio</button>
+      </div>
+      <div class="service-card reveal visible" onclick="selectService('Corte Infantil')">
+        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"></path></svg></div>
+        <div class="service-name">Corte Infantil</div>
+        <div class="service-desc">Para los más pequeños. Ambiente tranquilo y manos expertas para que queden impecables.</div>
+        <div class="service-meta">
+          <div class="service-price">$9.000</div>
+          <div class="service-duration">30 min</div>
+        </div>
+        <button class="service-btn">Reservar este servicio</button>
+      </div></div>
+</section>
+
+<!-- TEAM -->
+<section id="equipo">
+  <div class="section-eyebrow reveal visible">El equipo</div>
+  <div class="section-title reveal reveal-delay-1 visible">Nuestros<br><em>barberos</em></div>
+  <div class="ornament reveal reveal-delay-2 visible">
+    <div class="ornament-line"></div>
+    <div class="ornament-diamond"></div>
+    <div class="ornament-text">Maestros del oficio</div>
+    <div class="ornament-diamond"></div>
+    <div class="ornament-line"></div>
+  </div>
+  <div class="team-grid" id="team-grid"><div class="barber-card reveal visible">
+      <div class="barber-photo"><img src="barbero-carlo.jpg" alt="Carlo Martínez" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" style="display: none;"><span class="barber-photo-init" style="display: flex;">C</span></div>
+      <div class="barber-name">Carlo Martínez</div>
+      <div class="barber-role">Master Barber</div>
+      <div class="barber-spec">Fades y degradados</div>
+      
+    </div><div class="barber-card reveal reveal-delay-1 visible">
+      <div class="barber-photo"><img src="barbero-diego.jpg" alt="Diego Reyes" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" style="display: none;"><span class="barber-photo-init" style="display: flex;">D</span></div>
+      <div class="barber-name">Diego Reyes</div>
+      <div class="barber-role">Senior Barber</div>
+      <div class="barber-spec">Afeitado clásico</div>
+      
+    </div><div class="barber-card reveal reveal-delay-2 visible">
+      <div class="barber-photo"><img src="barbero-matias.jpg" alt="Matías Soto" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" style="display: none;"><span class="barber-photo-init" style="display: flex;">M</span></div>
+      <div class="barber-name">Matías Soto</div>
+      <div class="barber-role">Barber</div>
+      <div class="barber-spec">Diseños y cortes urbanos</div>
+      
+    </div></div>
+</section>
+
+<!-- BOOKING -->
+<section id="reservar">
+  <div class="section-eyebrow reveal visible">Agenda tu turno</div>
+  <div class="section-title reveal reveal-delay-1 visible">Reserva<br><em>online</em></div>
+  <div class="ornament reveal reveal-delay-2 visible">
+    <div class="ornament-line"></div>
+    <div class="ornament-diamond"></div>
+    <div class="ornament-text">Listo en 2 minutos</div>
+    <div class="ornament-diamond"></div>
+    <div class="ornament-line"></div>
+  </div>
+  <div class="booking-container">
+    <div class="steps-indicator">
+      <div class="step-dot active" id="dot-1">1</div><div class="step-line" id="line-1"></div>
+      <div class="step-dot" id="dot-2">2</div><div class="step-line" id="line-2"></div>
+      <div class="step-dot" id="dot-3">3</div><div class="step-line" id="line-3"></div>
+      <div class="step-dot" id="dot-4">4</div><div class="step-line" id="line-4"></div>
+      <div class="step-dot" id="dot-5">5</div><div class="step-line" id="line-5"></div>
+      <div class="step-dot" id="dot-6">6</div>
+    </div>
+    <div class="booking-step active" id="step-1">
+      <div class="step-title">Elige el servicio</div>
+      <div class="options-grid" id="booking-services-grid">
+      <div class="option-card" onclick="chooseService('Corte Clásico','$12.000','45 min')">
+        <div class="name">Corte Clásico</div>
+        <div class="sub">45 min</div>
+        <div class="price">$12.000</div>
+      </div>
+      <div class="option-card" onclick="chooseService('Corte + Barba','$18.000','75 min')">
+        <div class="name">Corte + Barba</div>
+        <div class="sub">75 min</div>
+        <div class="price">$18.000</div>
+      </div>
+      <div class="option-card" onclick="chooseService('Afeitado con Navaja','$10.000','45 min')">
+        <div class="name">Afeitado con Navaja</div>
+        <div class="sub">45 min</div>
+        <div class="price">$10.000</div>
+      </div>
+      <div class="option-card" onclick="chooseService('Tratamiento de Barba','$8.000','30 min')">
+        <div class="name">Tratamiento de Barba</div>
+        <div class="sub">30 min</div>
+        <div class="price">$8.000</div>
+      </div>
+      <div class="option-card" onclick="chooseService('Corte Infantil','$9.000','30 min')">
+        <div class="name">Corte Infantil</div>
+        <div class="sub">30 min</div>
+        <div class="price">$9.000</div>
+      </div></div>
+    </div>
+    <div class="booking-step" id="step-2">
+      <div class="step-title">Elige tu barbero</div>
+      <div class="options-grid" id="barberos-options"><div class="option-card" onclick="chooseBarbero('Carlo Martínez')"><div class="name">Carlo Martínez</div><div class="sub">Master Barber</div></div><div class="option-card" onclick="chooseBarbero('Diego Reyes')"><div class="name">Diego Reyes</div><div class="sub">Senior Barber</div></div><div class="option-card" onclick="chooseBarbero('Matías Soto')"><div class="name">Matías Soto</div><div class="sub">Barber</div></div><div class="option-card" onclick="chooseBarbero('Sin preferencia')"><div class="name">Sin preferencia</div><div class="sub">El que esté disponible</div></div></div>
+      <button class="btn-outline" onclick="goStep(1)">Volver</button>
+    </div>
+    <div class="booking-step" id="step-3">
+      <div class="step-title">Elige la fecha</div>
+      <div class="calendar-wrap">
+        <div class="cal-header">
+          <button class="cal-nav" onclick="calNav(-1)">‹</button>
+          <div class="cal-title" id="cal-month-label">Mayo 2026</div>
+          <button class="cal-nav" onclick="calNav(1)">›</button>
+        </div>
+        <div class="cal-days-header"><span>LUN</span><span>MAR</span><span>MIÉ</span><span>JUE</span><span>VIE</span><span>SÁB</span><span>DOM</span></div>
+        <div class="cal-grid" id="cal-grid"><div class="cal-day empty"></div><div class="cal-day empty"></div><div class="cal-day empty"></div><div class="cal-day empty"></div><div class="cal-day past">1</div><div class="cal-day past">2</div><div class="cal-day past">3</div><div class="cal-day past">4</div><div class="cal-day past">5</div><div class="cal-day past">6</div><div class="cal-day past">7</div><div class="cal-day past">8</div><div class="cal-day past">9</div><div class="cal-day past">10</div><div class="cal-day past">11</div><div class="cal-day past">12</div><div class="cal-day past">13</div><div class="cal-day past">14</div><div class="cal-day past">15</div><div class="cal-day past">16</div><div class="cal-day past">17</div><div class="cal-day past">18</div><div class="cal-day available today">19</div><div class="cal-day available">20</div><div class="cal-day available">21</div><div class="cal-day available">22</div><div class="cal-day available">23</div><div class="cal-day closed">24</div><div class="cal-day available">25</div><div class="cal-day available">26</div><div class="cal-day available">27</div><div class="cal-day available">28</div><div class="cal-day available">29</div><div class="cal-day available">30</div><div class="cal-day closed">31</div></div>
+      </div>
+      <button class="btn-outline" onclick="goStep(2)">Volver</button>
+    </div>
+    <div class="booking-step" id="step-4">
+      <div class="step-title">Elige la hora</div>
+      <div class="slots-grid" id="slots-grid"></div>
+      <button class="btn-outline" onclick="goStep(3)">Volver</button>
+    </div>
+    <div class="booking-step" id="step-5">
+      <div class="step-title">Tus datos</div>
+      <div class="form-group"><label>Nombre completo</label><input type="text" id="inp-nombre" placeholder="Juan García"></div>
+      <div class="form-group"><label>Email</label><input type="email" id="inp-email" placeholder="juan@email.com"></div>
+      <div class="form-group"><label>Teléfono o WhatsApp</label><input type="tel" id="inp-telefono" placeholder="+56 9 1234 5678"></div>
+      <div class="form-group"><label>Nota (opcional)</label><textarea id="inp-nota" placeholder="Ej: degradado corto, me gusta el fade con línea..."></textarea></div>
+      <button class="btn-gold" onclick="goToConfirm()">Continuar</button>
+      <button class="btn-outline" onclick="goStep(4)">Volver</button>
+    </div>
+    <div class="booking-step" id="step-6">
+      <div class="step-title">Confirmar reserva</div>
+      <div class="confirmation-box">
+        <div class="conf-row"><span class="conf-label">Servicio</span><span class="conf-value" id="conf-servicio"></span></div>
+        <div class="conf-row"><span class="conf-label">Precio</span><span class="conf-value" id="conf-precio"></span></div>
+        <div class="conf-row"><span class="conf-label">Barbero</span><span class="conf-value" id="conf-barbero"></span></div>
+        <div class="conf-row"><span class="conf-label">Fecha</span><span class="conf-value" id="conf-fecha"></span></div>
+        <div class="conf-row"><span class="conf-label">Hora</span><span class="conf-value" id="conf-hora"></span></div>
+        <div class="conf-row"><span class="conf-label">Cliente</span><span class="conf-value" id="conf-nombre"></span></div>
+        <div class="conf-row"><span class="conf-label">Email</span><span class="conf-value" id="conf-email"></span></div>
+        <div class="conf-row" id="conf-nota-row"><span class="conf-label">Nota</span><span class="conf-value" id="conf-nota"></span></div>
+      </div>
+      <div class="email-preview">
+        <div class="email-preview-label">
+          <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          Email de confirmacion — preview
+        </div>
+        <div class="email-preview-subject" id="prev-subject"></div>
+        <div class="email-preview-body">Resumen de tu reserva con todos los detalles. En la version con Firebase este email se envia automaticamente al confirmar.</div>
+      </div>
+      <button class="btn-gold" onclick="confirmarReserva()">Confirmar reserva</button>
+      <button class="btn-outline" onclick="goStep(5)">Volver</button>
+    </div>
+    <div class="booking-step" id="step-7">
+      <div class="success-box">
+        <div class="success-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+        <div class="success-id" id="success-id"></div>
+        <div class="success-heading">Reserva confirmada</div>
+        <div class="success-msg" id="success-msg"></div>
+        <div class="success-actions">
+          <a id="wa-btn" href="#" target="_blank" class="btn-wa">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"></path><path d="M12 0C5.373 0 0 5.373 0 12c0 2.097.543 4.065 1.494 5.779L0 24l6.39-1.674A11.942 11.942 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818c-1.842 0-3.555-.497-5.034-1.365l-.36-.214-3.737.979.998-3.648-.235-.374A9.774 9.774 0 012.182 12c0-5.421 4.397-9.818 9.818-9.818 5.421 0 9.818 4.397 9.818 9.818 0 5.421-4.397 9.818-9.818 9.818z"></path></svg>
+            Confirmar por WhatsApp
+          </a>
+          <a id="cal-btn" href="#" target="_blank" class="btn-cal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+            Añadir al calendario
+          </a>
+          <button class="btn-outline" onclick="resetBooking()">Hacer otra reserva</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section id="ubicacion">
+  <div class="section-eyebrow reveal visible">Encuéntranos</div>
+  <div class="section-title reveal reveal-delay-1 visible">Ubicación<br><em>y horarios</em></div>
+  <div class="ornament reveal reveal-delay-2 visible">
+    <div class="ornament-line"></div>
+    <div class="ornament-diamond"></div>
+    <div class="ornament-text">Providencia, Santiago</div>
+    <div class="ornament-diamond"></div>
+    <div class="ornament-line"></div>
+  </div>
+  <div class="location-grid">
+    <div>
+      <div class="location-detail reveal visible">
+        <div class="location-ico"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></div>
+        <div><strong>Los Leones 2091, Providencia</strong><span>Santiago, Chile</span></div>
+      </div>
+      <div class="location-detail reveal reveal-delay-1 visible">
+        <div class="location-ico"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.8 19.79 19.79 0 01.07 4.18 2 2 0 012 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 9.91a16 16 0 006.72 6.72l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"></path></svg></div>
+        <div><strong>+56 9 1234 5678</strong><span>WhatsApp disponible</span></div>
+      </div>
+      <div class="location-detail reveal reveal-delay-2 visible">
+        <div class="location-ico"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></div>
+        <div><strong>contacto@noirbarbershop.cl</strong><span>Respondemos en menos de 24h</span></div>
+      </div>
+      <div class="gold-line reveal reveal-delay-3 visible"></div>
+      <div class="hours-table reveal reveal-delay-3 visible">
+        <div class="hours-row"><span class="hours-day">Lunes — Viernes</span><span class="hours-time">10:00 — 20:00</span></div>
+        <div class="hours-row"><span class="hours-day">Sábado</span><span class="hours-time">10:00 — 18:00</span></div>
+        <div class="hours-row"><span class="hours-day">Domingo</span><span class="hours-time closed">Cerrado</span></div>
+      </div>
+    </div>
+    <div class="map-wrap reveal reveal-delay-1 visible">
+      <iframe src="https://maps.google.com/maps?q=Los+Leones+2091+Providencia+Santiago+Chile&amp;output=embed&amp;hl=es" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-logo">Noir Barbershop</div>
+      <div class="footer-tagline">Barbería clásica en el corazón de Providencia. Donde el oficio se convierte en arte.</div>
+      <div class="socials">
+        <a href="https://instagram.com/noir.barbershop" class="social-btn" target="_blank" title="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"></circle></svg>
+        </a>
+        <a href="https://wa.me/56912345678" class="social-btn" target="_blank" title="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"></path><path d="M12 0C5.373 0 0 5.373 0 12c0 2.097.543 4.065 1.494 5.779L0 24l6.39-1.674A11.942 11.942 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818c-1.842 0-3.555-.497-5.034-1.365l-.36-.214-3.737.979.998-3.648-.235-.374A9.774 9.774 0 012.182 12c0-5.421 4.397-9.818 9.818-9.818 5.421 0 9.818 4.397 9.818 9.818 0 5.421-4.397 9.818-9.818 9.818z"></path></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-nav">
+      <h4>Navegación</h4>
+      <a href="#galeria">Galería</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#equipo">El equipo</a>
+      <a href="#ubicacion">Ubicación</a>
+      <a href="#reservar">Reservar</a>
+    </div>
+    <div class="footer-cta-box">
+      <h3>¿Listo para tu mejor corte?</h3>
+      <p>Agenda tu turno online en menos de 2 minutos. Sin llamadas, sin esperas.</p>
+      <a href="#reservar">Reservar ahora</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">2025 · Noir Barbershop · Todos los derechos reservados</div>
+    <button class="admin-link" onclick="openAdmin()">Panel admin</button>
+    <button class="admin-link" onclick="openBarberPanel()" style="margin-left:16px">Acceso barberos</button>
+  </div>
+</footer>
+
+<!-- WA FLOAT -->
+<a href="https://wa.me/56912345678" class="wa-float" target="_blank" title="WhatsApp">
+  <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"></path><path d="M12 0C5.373 0 0 5.373 0 12c0 2.097.543 4.065 1.494 5.779L0 24l6.39-1.674A11.942 11.942 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818c-1.842 0-3.555-.497-5.034-1.365l-.36-.214-3.737.979.998-3.648-.235-.374A9.774 9.774 0 012.182 12c0-5.421 4.397-9.818 9.818-9.818 5.421 0 9.818 4.397 9.818 9.818 0 5.421-4.397 9.818-9.818 9.818z"></path></svg>
+</a>
+
+<!-- ADMIN -->
+<div id="admin-panel" class="open">
+  <button id="admin-close-btn" onclick="closeAdmin()">×</button>
+  <div id="admin-login" style="display: none;">
+    <div id="admin-login-box">
+      <div class="admin-lock-icon"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0110 0v4"></path></svg></div>
+      <h2>Panel Admin</h2>
+      <p>Acceso exclusivo para el dueño de Noir Barbershop</p>
+      <input type="password" id="admin-password" placeholder="Contraseña" onkeydown="if(event.key==='Enter')checkAdmin()">
+      <div id="admin-error">Contraseña incorrecta</div>
+      <button class="btn-gold" onclick="checkAdmin()">Entrar</button>
+    </div>
+  </div>
+  <div id="admin-content" class="open">
+    <div class="admin-header">
+      <div class="admin-title-wrap">
+        <span class="admin-title">Administración</span>
+        <span class="admin-badge" id="pending-count">0</span>
+      </div>
+      <div class="admin-tabs">
+        <button class="admin-tab" onclick="switchAdminTab('reservas',this)">Reservas</button>
+        <button class="admin-tab" onclick="switchAdminTab('galeria',this)">Galería</button>
+        <button class="admin-tab" onclick="switchAdminTab('header',this)">Header</button>
+        <button class="admin-tab" onclick="switchAdminTab('horarios',this)">Horarios</button>
+        <button class="admin-tab" onclick="switchAdminTab('servicios',this)">Servicios</button>
+        <button class="admin-tab" onclick="switchAdminTab('barberos',this)">Barberos</button>
+        <button class="admin-tab active" onclick="switchAdminTab('firebase',this)">☁ Firebase</button>
+      </div>
+      <button class="admin-logout" onclick="adminLogout()">Cerrar sesión</button>
+    </div>
+    <div class="admin-body">
+
+      <!-- TAB: RESERVAS -->
+      <div id="tab-reservas" class="admin-tab-content">
+        <div class="adm-stats" id="adm-stats-bar"><div class="adm-stat"><div class="adm-stat-num">0</div><div class="adm-stat-lbl">Total</div></div><div class="adm-stat"><div class="adm-stat-num">0</div><div class="adm-stat-lbl">Pendientes</div></div><div class="adm-stat"><div class="adm-stat-num">0</div><div class="adm-stat-lbl">Completadas</div></div><div class="adm-stat"><div class="adm-stat-num">0</div><div class="adm-stat-lbl">Hoy</div></div></div>
+        <div class="adm-view-toggle">
+          <button class="adm-view-btn active" id="view-lista-btn" onclick="setAdmView('lista')">Lista</button>
+          <button class="adm-view-btn" id="view-cal-btn" onclick="setAdmView('cal')">Calendario</button>
+        </div>
+        <div id="adm-lista-view">
+          <div class="filter-bar">
+            <button class="filter-btn active" onclick="setFilter('todas',this)">Todas</button>
+            <button class="filter-btn" onclick="setFilter('pendiente',this)">Pendientes</button>
+            <button class="filter-btn" onclick="setFilter('hoy',this)">Hoy</button>
+            <button class="filter-btn" onclick="setFilter('completada',this)">Completadas</button>
+            <button class="filter-btn" onclick="setFilter('cancelada',this)">Canceladas</button>
+            <select class="admin-cal-select" id="res-barbero-filter" onchange="renderAdminReservas(currentFilter)" style="margin-left:auto"><option value="all">Todos los barberos</option><option value="Carlo Martínez">Carlo Martínez</option><option value="Diego Reyes">Diego Reyes</option><option value="Matías Soto">Matías Soto</option></select>
+            <button class="export-btn" onclick="exportCSV()">
+              <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              CSV
+            </button>
+          </div>
+          <div id="reservations-list"><div class="empty-state"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg><p>No hay reservas en esta categoría</p></div></div>
+        </div>
+        <div id="adm-cal-view" style="display:none">
+          <div class="admin-cal-controls">
+            <select class="admin-cal-select" id="admin-cal-barbero" onchange="adminCalFilter=this.value;renderAdminCalendar()">
+              <option value="all">Todos los barberos</option>
+            </select>
+            <div class="admin-cal-nav-wrap">
+              <button class="admin-cal-btn" onclick="adminCalNav(-1)">‹</button>
+              <div class="admin-cal-title" id="admin-cal-month-label"></div>
+              <button class="admin-cal-btn" onclick="adminCalNav(1)">›</button>
+            </div>
+          </div>
+          <div class="admin-dow-header"><span>LUN</span><span>MAR</span><span>MIÉ</span><span>JUE</span><span>VIE</span><span>SÁB</span><span>DOM</span></div>
+          <div class="admin-month-grid" id="admin-month-grid"></div>
+          <div id="admin-day-panel"></div>
+        </div>
+      </div>
+
+      <!-- TAB: GALERIA -->
+      <div id="tab-galeria" class="admin-tab-content"></div>
+
+      <!-- TAB: HEADER -->
+      <div id="tab-header" class="admin-tab-content"></div>
+
+      <!-- TAB: HORARIOS -->
+      <div id="tab-horarios" class="admin-tab-content"></div>
+
+      <!-- TAB: SERVICIOS -->
+      <div id="tab-servicios" class="admin-tab-content"></div>
+
+      <!-- TAB: BARBEROS -->
+      <div id="tab-barberos" class="admin-tab-content">
+        <!-- rendered dynamically -->
+      </div>
+
+      <!-- TAB: FIREBASE -->
+      <div id="tab-firebase" class="admin-tab-content active">
+<div class="adm-section-label">Sincronización en la nube · Firebase + Resend</div>
+<div>
+  <span class="fb-status-badge connected"><span class="fb-dot"></span>Conectado</span>
+</div>
+<div id="fb-alert" class="fb-alert"></div>
+
+
+<div class="fb-section">
+  <h4>Estado de la conexión</h4>
+  <ul class="fb-checklist">
+    <li><span class="fb-check-icon">✅</span> Conectado a proyecto <strong>noir-barbershop</strong></li>
+    <li><span class="fb-check-icon">✅</span> Reservas sincronizando en tiempo real</li>
+    <li><span class="fb-check-icon">✅</span> Galería, header, servicios y barberos sincronizados</li>
+    <li><span class="fb-check-icon">✅</span> Email del dueño: <strong>jeronimoetcheverry@gmail.com</strong></li>
+    <li><span class="fb-check-icon">ℹ️</span> Emails se envían si tienes Trigger Email instalado en Firebase</li>
+  </ul>
+  <div style="margin-top:20px;padding-top:16px;border-top:1px solid var(--border)">
+    <p style="font-size:13px;color:var(--muted);margin-bottom:12px;font-family:'Crimson Text',serif">Para que Firebase funcione en Netlify u otro hosting, descarga el HTML con la configuración ya embebida:</p>
+    <button class="fb-btn-primary" onclick="descargarHtmlListo()" style="font-size:15px;padding:12px 28px">⬇ Descargar HTML listo para subir</button>
+    <p class="fb-hint" style="margin-top:8px">Este archivo incluye Firebase conectado — solo arrástralo a Netlify Drop.</p>
+  </div>
+  <div style="margin-top:12px">
+    <button class="fb-btn-secondary" onclick="disconnectFirebase()">Desconectar Firebase</button>
+  </div>
+</div>
+<div class="fb-section">
+  <h4>Actualizar email de notificaciones</h4>
+  <div class="fb-field">
+    <label class="fb-label">Email del dueño (recibe notificación de cada reserva)</label>
+    <input type="email" class="fb-input" id="fb-owner-email-update" value="jeronimoetcheverry@gmail.com" placeholder="hola@minegocio.com">
+  </div>
+  <button class="fb-btn-primary" onclick="saveOwnerEmail()">Guardar email</button>
+</div>
+</div>
+
+    </div>
+  </div>
+</div>
+
+<!-- BARBER PANEL -->
+<div id="barber-panel">
+  <button id="barber-close-btn" onclick="closeBarberPanel()">×</button>
+  <div id="barber-login">
+    <div id="barber-login-box">
+      <div class="admin-lock-icon"><svg viewBox="0 0 24 24"><path d="M6 9l6-6 6 6M6 15l6 6 6-6"></path><line x1="12" y1="3" x2="12" y2="21"></line></svg></div>
+      <h2>Acceso Barberos</h2>
+      <p>Selecciona tu nombre e ingresa tu PIN</p>
+      <select id="barber-select"></select>
+      <input type="password" id="barber-pin-input" placeholder="PIN de acceso" maxlength="6" onkeydown="if(event.key==='Enter')barberLogin()">
+      <div id="barber-login-error">PIN incorrecto</div>
+      <button class="btn-gold" onclick="barberLogin()">Entrar</button>
+    </div>
+  </div>
+  <div id="barber-content">
+    <div class="admin-header">
+      <div class="admin-title-wrap">
+        <span class="admin-title" id="barber-name-header"></span>
+        <span class="admin-badge" id="barber-pending-badge">0</span>
+      </div>
+      <div class="admin-cal-nav-wrap">
+        <button class="admin-cal-btn" onclick="barberCalNav(-1)">‹</button>
+        <div class="admin-cal-title" id="barber-cal-month-label"></div>
+        <button class="admin-cal-btn" onclick="barberCalNav(1)">›</button>
+      </div>
+      <button class="admin-logout" onclick="barberLogout()">Salir</button>
+    </div>
+    <div class="admin-body">
+      <div class="barber-today-card" id="barber-today-card">
+        <div class="barber-today-num" id="barber-today-num">0</div>
+        <div>
+          <div class="barber-today-label">Turnos hoy</div>
+          <div class="barber-today-sub" id="barber-today-sub">0 pendientes</div>
+        </div>
+      </div>
+      <div class="admin-dow-header"><span>LUN</span><span>MAR</span><span>MIÉ</span><span>JUE</span><span>VIE</span><span>SÁB</span><span>DOM</span></div>
+      <div class="admin-month-grid" id="barber-month-grid"></div>
+      <div id="barber-day-panel"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ── CONSTANTS ──
+const HANDLE='noir-barbershop';
+const FIREBASE_CONFIG_EMBED={
+  "apiKey": "AIzaSyCK6udk9SOQHCgDgd5qiMjXuHeh3EIyVEo",
+  "authDomain": "noir-barbershop.firebaseapp.com",
+  "projectId": "noir-barbershop",
+  "storageBucket": "noir-barbershop.firebasestorage.app",
+  "messagingSenderId": "161738618708",
+  "appId": "1:161738618708:web:cda5829ad47b2f9bbcbac1"
+}; // se reemplaza al descargar el HTML listo para subir
+const OWNER_EMAIL_EMBED="jeronimoetcheverry@gmail.com";
+const STORAGE_KEY=`barberia_reservas_${HANDLE}`;
+const BARBEROS_KEY=`barberia_barberos_${HANDLE}`;
+const GALLERY_KEY=`barberia_galeria_${HANDLE}`;
+const HERO_KEY=`barberia_hero_${HANDLE}`;
+const SCHEDULE_KEY=`barberia_horarios_${HANDLE}`;
+const ADMIN_PASS='noir2024';
+const ASSET='assets/noir-barbershop/';
+const INIT_BARBEROS=[
+  {id:'b1',name:'Carlo Martínez',role:'Master Barber',spec:'Fades y degradados',photo:'assets/noir-barbershop/barbero-carlo.jpg',ig:'',pin:'1234'},
+  {id:'b2',name:'Diego Reyes',role:'Senior Barber',spec:'Afeitado clásico',photo:'assets/noir-barbershop/barbero-diego.jpg',ig:'',pin:'5678'},
+  {id:'b3',name:'Matías Soto',role:'Barber',spec:'Diseños y cortes urbanos',photo:'assets/noir-barbershop/barbero-matias.jpg',ig:'',pin:'9012'}
+];
+const INIT_GALLERY=[
+  {src:'assets/noir-barbershop/post-1.jpg',visible:true,tag:'Corte clásico'},
+  {src:'assets/noir-barbershop/post-2.jpg',visible:true,tag:'Fade'},
+  {src:'assets/noir-barbershop/post-3.jpg',visible:true,tag:'Barba'},
+  {src:'assets/noir-barbershop/post-4.jpg',visible:true,tag:'Degradado'},
+  {src:'assets/noir-barbershop/post-5.jpg',visible:true,tag:'Corte moderno'},
+  {src:'assets/noir-barbershop/post-6.jpg',visible:true,tag:'Afeitado'},
+  {src:'assets/noir-barbershop/post-7.jpg',visible:true,tag:'Diseño'},
+  {src:'assets/noir-barbershop/post-8.jpg',visible:true,tag:'Premium'},
+  {src:'assets/noir-barbershop/post-9.jpg',visible:true,tag:'Urbano'},
+];
+const INIT_HERO=[{src:'assets/noir-barbershop/post-5.jpg',visible:true}];
+const INIT_SCHEDULE={openDays:[1,2,3,4,5,6],openHour:10,closeHour:20,slotMin:30};
+const SERVICES_KEY=`barberia_servicios_${HANDLE}`;
+const INIT_SERVICES=[
+  {id:'sv1',name:'Corte Clásico',desc:'Corte preciso con tijera y máquina. Incluye lavado, secado y styling final.',price:'$12.000',duration:'45 min',icon:'scissors',visible:true},
+  {id:'sv2',name:'Corte + Barba',desc:'La experiencia completa. Corte premium más perfilado y arreglo de barba con navaja.',price:'$18.000',duration:'75 min',icon:'beard',visible:true},
+  {id:'sv3',name:'Afeitado con Navaja',desc:'Afeitado clásico con toalla caliente, aceite y navaja de hoja recta. Una experiencia única.',price:'$10.000',duration:'45 min',icon:'razor',visible:true},
+  {id:'sv4',name:'Tratamiento de Barba',desc:'Hidratación profunda, aceites esenciales y perfilado para mantener tu barba en su mejor estado.',price:'$8.000',duration:'30 min',icon:'shield',visible:true},
+  {id:'sv5',name:'Corte Infantil',desc:'Para los más pequeños. Ambiente tranquilo y manos expertas para que queden impecables.',price:'$9.000',duration:'30 min',icon:'users',visible:true},
+];
+const ICONS={
+  scissors:'<path d="M6 9l6-6 6 6M6 15l6 6 6-6"/><line x1="12" y1="3" x2="12" y2="21"/>',
+  razor:'<path d="M3 21l18-9L3 3v7l13 2-13 2v7z"/>',
+  beard:'<circle cx="12" cy="10" r="7"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9" stroke-width="2.5"/><line x1="15" y1="9" x2="15.01" y2="9" stroke-width="2.5"/>',
+  shield:'<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>',
+  users:'<path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>',
+  star:'<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>',
+  crown:'<path d="M2 20h20M5 20L3 8l5 4 4-6 4 6 5-4-2 12"/>',
+  clock:'<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>',
+  sparkle:'<path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.64 5.64l2.12 2.12M16.24 16.24l2.12 2.12M5.64 18.36l2.12-2.12M16.24 7.76l2.12-2.12"/>',
+  flame:'<path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 3z"/>',
+  droplet:'<path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/>',
+  leaf:'<path d="M17 8C8 10 5.9 16.17 3.82 19.6c-.12.2.1.45.33.36C5.8 19.17 9.5 17 12 14.5 12 20 7 22 7 22c10.29-1.09 13.5-10 11-15-1.5 3-4.5 3-4.5 3C18.5 7.5 18 4 18 4s-1 3-6 4.5"/>',
+};
+function iconSvg(key){return `<svg viewBox="0 0 24 24">${ICONS[key]||ICONS.scissors}</svg>`;}
+
+// ── DATA ──
+function getBarberos(){try{const d=localStorage.getItem(BARBEROS_KEY);if(d)return JSON.parse(d);localStorage.setItem(BARBEROS_KEY,JSON.stringify(INIT_BARBEROS));return INIT_BARBEROS;}catch{return INIT_BARBEROS;}}
+function saveBarberos(b){localStorage.setItem(BARBEROS_KEY,JSON.stringify(b));if(db)syncArrayToFirestore('barberos',b).catch(()=>{});}
+function getReservas(){try{return JSON.parse(localStorage.getItem(STORAGE_KEY)||'[]');}catch{return[];}}
+function saveReservas(r){localStorage.setItem(STORAGE_KEY,JSON.stringify(r));}
+function getGalleryStore(){try{const d=localStorage.getItem(GALLERY_KEY);if(d)return JSON.parse(d);localStorage.setItem(GALLERY_KEY,JSON.stringify(INIT_GALLERY));return INIT_GALLERY;}catch{return INIT_GALLERY;}}
+function saveGalleryStore(d){localStorage.setItem(GALLERY_KEY,JSON.stringify(d));if(db)syncArrayToFirestore('gallery',d).catch(()=>{});}
+function getHeroStore(){try{const d=localStorage.getItem(HERO_KEY);if(d)return JSON.parse(d);localStorage.setItem(HERO_KEY,JSON.stringify(INIT_HERO));return INIT_HERO;}catch{return INIT_HERO;}}
+function saveHeroStore(d){localStorage.setItem(HERO_KEY,JSON.stringify(d));if(db)syncArrayToFirestore('hero',d).catch(()=>{});}
+function getScheduleStore(){try{const d=localStorage.getItem(SCHEDULE_KEY);if(d)return JSON.parse(d);localStorage.setItem(SCHEDULE_KEY,JSON.stringify(INIT_SCHEDULE));return INIT_SCHEDULE;}catch{return INIT_SCHEDULE;}}
+function saveScheduleStore(d){localStorage.setItem(SCHEDULE_KEY,JSON.stringify(d));if(db)syncScheduleToFirestore(d).catch(()=>{});}
+function getServicesStore(){try{const d=localStorage.getItem(SERVICES_KEY);if(d)return JSON.parse(d);localStorage.setItem(SERVICES_KEY,JSON.stringify(INIT_SERVICES));return INIT_SERVICES;}catch{return INIT_SERVICES;}}
+function saveServicesStore(d){localStorage.setItem(SERVICES_KEY,JSON.stringify(d));if(db)syncArrayToFirestore('services',d).catch(()=>{});}
+
+// ── BUILD SECTIONS ──
+let galleryImgs=[];
+function buildGallery(){
+  const visible=getGalleryStore().filter(x=>x.visible);
+  galleryImgs=visible.map(x=>x.src);
+  const grid=document.getElementById('gallery-grid');
+  if(!grid)return;
+  const delays=['','reveal-delay-1','reveal-delay-2','reveal-delay-3'];
+  const svgZoom=`<svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>`;
+  grid.innerHTML=visible.map((x,i)=>`<div class="gallery-item reveal ${delays[i%4]}"><img src="${x.src}" alt="${x.tag||''}" onclick="openLightbox(${i})"><div class="gallery-overlay">${svgZoom}</div></div>`).join('');
+  document.querySelectorAll('#gallery-grid .reveal').forEach(el=>observer.observe(el));
+}
+
+function buildServices(){
+  const svcs=getServicesStore().filter(s=>s.visible);
+  const delays=['','reveal-delay-1','reveal-delay-2','reveal-delay-3'];
+  // Sección pública
+  const grid=document.getElementById('services-grid');
+  if(grid){
+    grid.innerHTML=svcs.map((s,i)=>`
+      <div class="service-card reveal ${delays[i%4]}" onclick="selectService('${s.name.replace(/'/g,"\\'")}')">
+        <div class="service-icon">${iconSvg(s.icon)}</div>
+        <div class="service-name">${s.name}</div>
+        <div class="service-desc">${s.desc}</div>
+        <div class="service-meta">
+          <div class="service-price">${s.price||'Consultar'}</div>
+          <div class="service-duration">${s.duration||''}</div>
+        </div>
+        <button class="service-btn">Reservar este servicio</button>
+      </div>`).join('');
+    document.querySelectorAll('#services-grid .reveal').forEach(el=>observer.observe(el));
+  }
+  // Step 1 del formulario de reservas
+  const bsg=document.getElementById('booking-services-grid');
+  if(bsg){
+    bsg.innerHTML=svcs.map(s=>`
+      <div class="option-card" onclick="chooseService('${s.name.replace(/'/g,"\\'")}','${s.price||'Consultar'}','${s.duration||''}')">
+        <div class="name">${s.name}</div>
+        <div class="sub">${s.duration||''}</div>
+        <div class="price">${s.price||'Consultar'}</div>
+      </div>`).join('');
+  }
+}
+
+let heroInterval=null,heroIndex=0;
+function buildHero(){
+  const slides=getHeroStore().filter(x=>x.visible);
+  const bg=document.getElementById('hero-bg');
+  if(!bg)return;
+  if(heroInterval){clearInterval(heroInterval);heroInterval=null;}
+  heroIndex=0;
+  const overlay=`<div class="hero-overlay"></div>`;
+  if(!slides.length){bg.innerHTML=overlay;return;}
+  bg.innerHTML=slides.map((s,i)=>`<img src="${s.src}" alt="NOIR Barbershop" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;filter:sepia(30%) brightness(0.65) contrast(1.1);opacity:${i===0?1:0};transition:opacity 1.2s ease;pointer-events:none">`).join('')+overlay;
+  if(slides.length>1){
+    heroInterval=setInterval(()=>{
+      const imgs=bg.querySelectorAll('img');
+      if(!imgs.length)return;
+      imgs[heroIndex].style.opacity='0';
+      heroIndex=(heroIndex+1)%imgs.length;
+      imgs[heroIndex].style.opacity='1';
+    },4500);
+  }
+}
+
+// ── NAV ──
+window.addEventListener('scroll',()=>document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>60));
+function toggleMenu(){document.getElementById('nav-links').classList.toggle('open');}
+function closeMenu(){document.getElementById('nav-links').classList.remove('open');}
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');}),{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+// ── LIGHTBOX ──
+// galleryImgs is built dynamically by buildGallery()
+let currentImg=0;
+function openLightbox(i){currentImg=i;document.getElementById('lightbox-img').src=galleryImgs[i];document.getElementById('lightbox').classList.add('open');}
+function closeLightbox(){document.getElementById('lightbox').classList.remove('open');}
+function lightboxNav(dir){currentImg=(currentImg+dir+galleryImgs.length)%galleryImgs.length;document.getElementById('lightbox-img').src=galleryImgs[currentImg];}
+document.getElementById('lightbox').addEventListener('click',e=>{if(e.target.id==='lightbox')closeLightbox();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeLightbox();}if(e.key==='ArrowLeft')lightboxNav(-1);if(e.key==='ArrowRight')lightboxNav(1);});
+
+// ── BOOKING ──
+let booking={servicio:'',precio:'',duracion:'',barbero:'',fecha:'',hora:'',nombre:'',email:'',telefono:'',nota:''};
+let currentStep=1;
+
+function renderBarberosStep(){
+  const grid=document.getElementById('barberos-options');
+  const bs=getBarberos();
+  grid.innerHTML=bs.map(b=>`<div class="option-card" onclick="chooseBarbero('${b.name}')"><div class="name">${b.name}</div><div class="sub">${b.role}</div></div>`).join('')+
+  `<div class="option-card" onclick="chooseBarbero('Sin preferencia')"><div class="name">Sin preferencia</div><div class="sub">El que esté disponible</div></div>`;
+}
+
+function goStep(n){document.getElementById(`step-${currentStep}`).classList.remove('active');currentStep=n;document.getElementById(`step-${n}`).classList.add('active');updateSteps(n);document.getElementById('reservar').scrollIntoView({behavior:'smooth',block:'start'});}
+function goToConfirm(){const nombre=document.getElementById('inp-nombre').value.trim(),email=document.getElementById('inp-email').value.trim(),telefono=document.getElementById('inp-telefono').value.trim();if(!nombre||!email||!telefono){alert('Por favor completa nombre, email y teléfono.');return;}booking.nombre=nombre;booking.email=email;booking.telefono=telefono;booking.nota=document.getElementById('inp-nota').value.trim();fillConfirmation();goStep(6);}
+function updateSteps(n){for(let i=1;i<=6;i++){const d=document.getElementById(`dot-${i}`);d.classList.remove('active','done');if(i<n)d.classList.add('done');else if(i===n)d.classList.add('active');}for(let i=1;i<=5;i++)document.getElementById(`line-${i}`).classList.toggle('done',i<n);}
+function chooseService(name,price,dur){booking.servicio=name;booking.precio=price;booking.duracion=dur;document.querySelectorAll('#step-1 .option-card').forEach(c=>c.classList.remove('selected'));event.currentTarget.classList.add('selected');setTimeout(()=>goStep(2),280);}
+function chooseBarbero(name){booking.barbero=name;document.querySelectorAll('#step-2 .option-card').forEach(c=>c.classList.remove('selected'));event.currentTarget.classList.add('selected');renderCalendar();setTimeout(()=>goStep(3),280);}
+function selectService(name){document.getElementById('reservar').scrollIntoView({behavior:'smooth'});setTimeout(()=>{document.querySelectorAll('#step-1 .option-card').forEach(c=>{if(c.querySelector('.name').textContent===name){c.classList.add('selected');c.click();}});},600);}
+
+// ── CALENDAR (BOOKING) ──
+let calYear,calMonth;
+function initCal(){const n=new Date();calYear=n.getFullYear();calMonth=n.getMonth();renderCalendar();}
+function calNav(dir){calMonth+=dir;if(calMonth<0){calMonth=11;calYear--;}if(calMonth>11){calMonth=0;calYear++;}renderCalendar();}
+function renderCalendar(){
+  const sc=getScheduleStore();
+  const months=['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+  document.getElementById('cal-month-label').textContent=`${months[calMonth]} ${calYear}`;
+  const grid=document.getElementById('cal-grid');grid.innerHTML='';
+  let startDay=new Date(calYear,calMonth,1).getDay()-1;if(startDay<0)startDay=6;
+  const daysInMonth=new Date(calYear,calMonth+1,0).getDate();
+  const today=new Date();today.setHours(0,0,0,0);
+  const maxDate=new Date();maxDate.setDate(maxDate.getDate()+30);
+  for(let i=0;i<startDay;i++){const d=document.createElement('div');d.className='cal-day empty';grid.appendChild(d);}
+  for(let d=1;d<=daysInMonth;d++){
+    const btn=document.createElement('div');
+    const date=new Date(calYear,calMonth,d);
+    const dateStr=`${calYear}-${String(calMonth+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+    const dow=date.getDay();
+    btn.textContent=d;
+    if(date<today||date>maxDate){btn.className='cal-day past';}
+    else if(!sc.openDays.includes(dow)){btn.className='cal-day closed';}
+    else{
+      btn.className='cal-day available';
+      if(date.toDateString()===new Date().toDateString())btn.classList.add('today');
+      if(booking.fecha===dateStr)btn.classList.add('selected');
+      btn.onclick=()=>{booking.fecha=dateStr;renderCalendar();renderSlots();setTimeout(()=>goStep(4),280);};
+    }
+    grid.appendChild(btn);
+  }
+}
+function renderSlots(){
+  const sc=getScheduleStore();
+  const grid=document.getElementById('slots-grid');grid.innerHTML='';
+  const taken=getReservas().filter(r=>r.fecha===booking.fecha&&r.barbero===booking.barbero&&r.estado!=='cancelada').map(r=>r.hora);
+  for(let min=sc.openHour*60;min<sc.closeHour*60;min+=sc.slotMin){
+    const h=Math.floor(min/60),m=min%60;
+    const time=`${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}`;
+    const slot=document.createElement('div');
+    slot.className='slot'+(taken.includes(time)?' taken':'');
+    if(booking.hora===time)slot.classList.add('selected');
+    slot.textContent=time;
+    if(!taken.includes(time))slot.onclick=()=>{booking.hora=time;document.querySelectorAll('.slot').forEach(s=>s.classList.remove('selected'));slot.classList.add('selected');setTimeout(()=>goStep(5),280);};
+    grid.appendChild(slot);
+  }
+}
+
+// ── BOOKING CONFIRM ──
+const dias=['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'],meses=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+function formatFecha(str){const[y,m,d]=str.split('-').map(Number);const date=new Date(y,m-1,d);return`${dias[date.getDay()]} ${d} de ${meses[m-1]} de ${y}`;}
+function fillConfirmation(){document.getElementById('conf-servicio').textContent=booking.servicio;document.getElementById('conf-precio').textContent=booking.precio;document.getElementById('conf-barbero').textContent=booking.barbero;document.getElementById('conf-fecha').textContent=formatFecha(booking.fecha);document.getElementById('conf-hora').textContent=booking.hora+' hrs';document.getElementById('conf-nombre').textContent=booking.nombre;document.getElementById('conf-email').textContent=booking.email;const notaRow=document.getElementById('conf-nota-row');if(booking.nota){document.getElementById('conf-nota').textContent=booking.nota;notaRow.style.display='flex';}else{notaRow.style.display='none';}document.getElementById('prev-subject').textContent=`Reserva confirmada — Noir Barbershop — ${booking.servicio} el ${formatFecha(booking.fecha)}`;}
+function confirmarReserva(){
+  const id='RES-'+Math.random().toString(36).substr(2,6).toUpperCase();
+  const reserva={id,...booking,estado:'pendiente',timestamp:Date.now()};
+  // Guardar en localStorage
+  const reservas=getReservas();reservas.push(reserva);saveReservas(reservas);
+  // Guardar en Firestore si está conectado
+  if(db){
+    syncReservaToFirestore(reserva).catch(()=>{});
+    sendReservaEmail(reserva).catch(()=>{});
+  }
+  // UI de éxito
+  document.getElementById('success-id').textContent=id;
+  const emailMsg=db&&booking.email
+    ?`Un email de confirmación fue enviado a <strong>${booking.email}</strong>.`
+    :(booking.email?`<em>Conecta Firebase para enviar confirmación automática por email.</em>`:'');
+  document.getElementById('success-msg').innerHTML=`Reserva guardada para el <strong>${formatFecha(booking.fecha)} a las ${booking.hora}</strong> con <strong>${booking.barbero}</strong>.<br><br>${emailMsg}`;
+  const waMsg=encodeURIComponent(`Hola Noir Barbershop! Reservé el ${formatFecha(booking.fecha)} a las ${booking.hora} — ${booking.servicio} — Ref: ${id}`);
+  document.getElementById('wa-btn').href=`https://wa.me/56912345678?text=${waMsg}`;
+  const calStart=booking.fecha.replace(/-/g,'')+'T'+booking.hora.replace(':','')+'00';
+  const[h,m]=booking.hora.split(':').map(Number);
+  const calEnd=booking.fecha.replace(/-/g,'')+'T'+String(h+1).padStart(2,'0')+String(m).padStart(2,'0')+'00';
+  document.getElementById('cal-btn').href=`https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent('Noir Barbershop — '+booking.servicio)}&dates=${calStart}/${calEnd}&details=${encodeURIComponent('Barbero: '+booking.barbero)}&location=${encodeURIComponent('Los Leones 2091, Providencia, Santiago')}`;
+  goStep(7);
+}
+function resetBooking(){booking={servicio:'',precio:'',duracion:'',barbero:'',fecha:'',hora:'',nombre:'',email:'',telefono:'',nota:''};['inp-nombre','inp-email','inp-telefono','inp-nota'].forEach(id=>{const el=document.getElementById(id);if(el)el.value='';});document.querySelectorAll('.option-card').forEach(c=>c.classList.remove('selected'));renderBarberosStep();goStep(1);}
+
+// ── ADMIN PANEL ──
+function openAdmin(){document.getElementById('admin-panel').classList.add('open');}
+function closeAdmin(){document.getElementById('admin-panel').classList.remove('open');document.getElementById('admin-login').style.display='flex';document.getElementById('admin-content').classList.remove('open');document.getElementById('admin-password').value='';document.getElementById('admin-error').style.display='none';}
+function checkAdmin(){if(document.getElementById('admin-password').value===ADMIN_PASS){document.getElementById('admin-login').style.display='none';document.getElementById('admin-content').classList.add('open');const firstTab=document.querySelector('.admin-tab');switchAdminTab('reservas',firstTab);renderStatsBar();populateResBarberoFilter();}else{document.getElementById('admin-error').style.display='block';document.getElementById('admin-password').value='';}}
+function adminLogout(){closeAdmin();}
+function updatePendingCount(){document.getElementById('pending-count').textContent=getReservas().filter(r=>r.estado==='pendiente').length;}
+function renderStatsBar(){
+  const r=getReservas();const hoy=new Date().toISOString().split('T')[0];
+  const bar=document.getElementById('adm-stats-bar');if(!bar)return;
+  bar.innerHTML=[['Total',r.length],['Pendientes',r.filter(x=>x.estado==='pendiente').length],['Completadas',r.filter(x=>x.estado==='completada').length],['Hoy',r.filter(x=>x.fecha===hoy).length]].map(([l,n])=>`<div class="adm-stat"><div class="adm-stat-num">${n}</div><div class="adm-stat-lbl">${l}</div></div>`).join('');
+}
+let admView='lista';
+function setAdmView(v){
+  admView=v;
+  document.getElementById('adm-lista-view').style.display=v==='lista'?'':'none';
+  document.getElementById('adm-cal-view').style.display=v==='cal'?'':'none';
+  document.getElementById('view-lista-btn').classList.toggle('active',v==='lista');
+  document.getElementById('view-cal-btn').classList.toggle('active',v==='cal');
+  if(v==='lista'){populateResBarberoFilter();renderAdminReservas(currentFilter);}
+  else{adminCalYear=new Date().getFullYear();adminCalMonth=new Date().getMonth();selectedAdminDay=null;document.getElementById('admin-day-panel').innerHTML='';populateAdminCalBarberoFilter();renderAdminCalendar();}
+}
+function populateResBarberoFilter(){
+  const sel=document.getElementById('res-barbero-filter');if(!sel)return;
+  const cur=sel.value||'all';
+  sel.innerHTML='<option value="all">Todos los barberos</option>'+getBarberos().map(b=>`<option value="${b.name}">${b.name}</option>`).join('');
+  sel.value=cur;
+}
+
+let currentAdminTab='reservas';
+function switchAdminTab(tab,btn){
+  currentAdminTab=tab;
+  document.querySelectorAll('.admin-tab').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.admin-tab-content').forEach(c=>c.classList.remove('active'));
+  document.getElementById('tab-'+tab).classList.add('active');
+  updatePendingCount();
+  if(tab==='reservas'){renderStatsBar();populateResBarberoFilter();renderAdminReservas(currentFilter);}
+  else if(tab==='galeria')renderGaleriaAdmin();
+  else if(tab==='header')renderHeaderAdmin();
+  else if(tab==='horarios')renderHorariosAdmin();
+  else if(tab==='servicios')renderServiciosAdmin();
+  else if(tab==='barberos')renderBarberosTab();
+  else if(tab==='firebase')renderFirebaseAdmin();
+}
+
+// Tab: Reservas
+let currentFilter='todas';
+function setFilter(f,btn){currentFilter=f;document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');renderAdminReservas(f);}
+function renderAdminReservas(filter){
+  let reservas=getReservas();
+  if(filter==='hoy'){const hoy=new Date().toISOString().split('T')[0];reservas=reservas.filter(r=>r.fecha===hoy);}
+  else if(filter!=='todas')reservas=reservas.filter(r=>r.estado===filter);
+  const bsel=document.getElementById('res-barbero-filter');
+  if(bsel&&bsel.value!=='all')reservas=reservas.filter(r=>r.barbero===bsel.value);
+  reservas.sort((a,b)=>b.timestamp-a.timestamp);
+  updatePendingCount();renderStatsBar();
+  renderCards(reservas,document.getElementById('reservations-list'),true);
+}
+function renderCards(reservas,container,isAdmin){
+  if(!reservas.length){container.innerHTML='<div class="empty-state"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><p>No hay reservas en esta categoría</p></div>';return;}
+  container.innerHTML=reservas.map(r=>{
+    const waNum=(r.telefono||'').replace(/\D/g,'');
+    const actions=isAdmin
+      ? `${r.estado==='pendiente'?`<button class="action-btn complete" onclick="updateReserva('${r.id}','completada')">Completada</button>`:''}${r.estado!=='cancelada'?`<button class="action-btn cancel-btn" onclick="updateReserva('${r.id}','cancelada')">Cancelar</button>`:''}<button class="action-btn" onclick="window.open('https://wa.me/${waNum}')">WhatsApp</button><button class="action-btn" onclick="window.location.href='mailto:${r.email}'">Email</button>`
+      : `${r.estado==='pendiente'?`<button class="action-btn complete" onclick="markBarberComplete('${r.id}')">Completada</button>`:''}<button class="action-btn" onclick="window.open('https://wa.me/${waNum}')">WhatsApp</button>`;
+    return`<div class="reservation-card"><div><div class="res-id">${r.id}</div><div class="res-grid"><div><div class="res-field"><span>Servicio</span>${r.servicio}</div><div class="res-field"><span>Barbero</span>${r.barbero}</div><div class="res-field"><span>Fecha</span>${formatFecha(r.fecha)}</div><div class="res-field"><span>Hora</span>${r.hora}</div></div><div><div class="res-field"><span>Cliente</span>${r.nombre}</div><div class="res-field"><span>Tel</span>${r.telefono}</div><div class="res-field"><span>Email</span>${r.email}</div>${r.nota?`<div class="res-field"><span>Nota</span>${r.nota}</div>`:''}</div></div></div><div class="res-actions"><span class="badge ${r.estado}">${r.estado}</span>${actions}</div></div>`;
+  }).join('');
+}
+function updateReserva(id,estado){const reservas=getReservas();const idx=reservas.findIndex(r=>r.id===id);if(idx>=0){reservas[idx].estado=estado;saveReservas(reservas);if(db)syncReservaEstado(id,estado).catch(()=>{});}updatePendingCount();renderStatsBar();if(admView==='lista')renderAdminReservas(currentFilter);else{renderAdminCalendar();if(selectedAdminDay)renderAdminDayPanel(selectedAdminDay);}}
+function exportCSV(){const reservas=getReservas();const headers=['ID','Servicio','Precio','Barbero','Fecha','Hora','Cliente','Email','Telefono','Nota','Estado'];const rows=reservas.map(r=>[r.id,r.servicio,r.precio,r.barbero,r.fecha,r.hora,r.nombre,r.email,r.telefono,r.nota||'',r.estado]);const csv=[headers,...rows].map(row=>row.map(v=>`"${String(v).replace(/"/g,'""')}"`).join(',')).join('\n');const blob=new Blob(['﻿'+csv],{type:'text/csv;charset=utf-8;'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=`noir-reservas-${new Date().toISOString().split('T')[0]}.csv`;a.click();}
+
+// Tab: Calendario
+let adminCalYear=new Date().getFullYear(),adminCalMonth=new Date().getMonth();
+let selectedAdminDay=null,adminCalFilter='all';
+function populateAdminCalBarberoFilter(){
+  const sel=document.getElementById('admin-cal-barbero');
+  const cur=sel.value||'all';
+  sel.innerHTML='<option value="all">Todos los barberos</option>'+getBarberos().map(b=>`<option value="${b.name}">${b.name}</option>`).join('');
+  sel.value=cur;
+  adminCalFilter=sel.value;
+}
+function adminCalNav(dir){adminCalMonth+=dir;if(adminCalMonth<0){adminCalMonth=11;adminCalYear--;}if(adminCalMonth>11){adminCalMonth=0;adminCalYear++;}selectedAdminDay=null;document.getElementById('admin-day-panel').innerHTML='';renderAdminCalendar();}
+function renderAdminCalendar(){
+  const months=['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+  document.getElementById('admin-cal-month-label').textContent=`${months[adminCalMonth]} ${adminCalYear}`;
+  const grid=document.getElementById('admin-month-grid');grid.innerHTML='';
+  const today=new Date();today.setHours(0,0,0,0);
+  let firstDay=new Date(adminCalYear,adminCalMonth,1).getDay()-1;if(firstDay<0)firstDay=6;
+  const daysInPrev=new Date(adminCalYear,adminCalMonth,0).getDate();
+  const daysInMonth=new Date(adminCalYear,adminCalMonth+1,0).getDate();
+  const reservas=getReservas();
+  for(let i=firstDay-1;i>=0;i--){const c=document.createElement('div');c.className='admin-day adm-other';c.innerHTML=`<div class="adm-num">${daysInPrev-i}</div>`;grid.appendChild(c);}
+  for(let d=1;d<=daysInMonth;d++){
+    const dateStr=`${adminCalYear}-${String(adminCalMonth+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+    const date=new Date(adminCalYear,adminCalMonth,d);
+    let dr=reservas.filter(r=>r.fecha===dateStr);
+    if(adminCalFilter!=='all')dr=dr.filter(r=>r.barbero===adminCalFilter);
+    dr.sort((a,b)=>a.hora.localeCompare(b.hora));
+    const c=document.createElement('div');
+    c.className='admin-day'+(date.toDateString()===today.toDateString()?' adm-today':'')+(selectedAdminDay===dateStr?' adm-selected':'');
+    c.onclick=()=>selectAdminDay(dateStr);
+    let chips=dr.slice(0,3).map(r=>`<span class="res-chip ${r.estado}">${r.hora} ${r.nombre}</span>`).join('');
+    if(dr.length>3)chips+=`<span class="res-chip chip-mas">+${dr.length-3} más</span>`;
+    c.innerHTML=`<div class="adm-num">${d}</div>${chips}`;
+    grid.appendChild(c);
+  }
+  if(selectedAdminDay)renderAdminDayPanel(selectedAdminDay);
+}
+function selectAdminDay(dateStr){selectedAdminDay=dateStr;renderAdminCalendar();}
+function renderAdminDayPanel(dateStr){
+  let dr=getReservas().filter(r=>r.fecha===dateStr);
+  if(adminCalFilter!=='all')dr=dr.filter(r=>r.barbero===adminCalFilter);
+  dr.sort((a,b)=>a.hora.localeCompare(b.hora));
+  const p=document.getElementById('admin-day-panel');
+  p.innerHTML=`<div class="admin-day-panel"><div class="admin-day-panel-title">${formatFecha(dateStr)}${dr.length?` — ${dr.length} reserva${dr.length!==1?'s':''}`:'— Sin reservas'}</div><div id="adp-cards"></div></div>`;
+  renderCards(dr,document.getElementById('adp-cards'),true);
+}
+
+// ── TEAM (DYNAMIC) ──
+function buildTeam(){
+  const bs=getBarberos();
+  const tg=document.getElementById('team-grid');
+  if(!tg)return;
+  const delays=['','reveal-delay-1','reveal-delay-2','reveal-delay-3'];
+  tg.innerHTML=bs.map((b,i)=>{
+    const photoHtml=b.photo
+      ?`<img src="${b.photo}" alt="${b.name}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="barber-photo-init" style="display:none">${b.name[0]}</span>`
+      :`<span class="barber-photo-init">${b.name[0]}</span>`;
+    const igHtml=b.ig?`<a href="https://instagram.com/${b.ig.replace('@','')}" target="_blank" style="display:inline-block;margin-top:8px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;color:var(--warm);text-decoration:none">@${b.ig.replace('@','')}</a>`:'';
+    return `<div class="barber-card reveal ${delays[i%4]}">
+      <div class="barber-photo">${photoHtml}</div>
+      <div class="barber-name">${b.name}</div>
+      <div class="barber-role">${b.role||''}</div>
+      ${b.spec?`<div class="barber-spec">${b.spec}</div>`:''}
+      ${igHtml}
+    </div>`;
+  }).join('');
+  document.querySelectorAll('#team-grid .reveal').forEach(el=>observer.observe(el));
+}
+
+// ── BARBEROS ADMIN TAB ──
+let editingBarberoId=null;
+
+function renderBarberosTab(){
+  const barberos=getBarberos();
+  const tab=document.getElementById('tab-barberos');
+  tab.innerHTML=`
+    <div class="adm-section-label">${barberos.length} barbero${barberos.length!==1?'s':''} registrado${barberos.length!==1?'s':''}</div>
+    <div class="barberos-grid" id="bm-grid"></div>
+    <button class="btn-add-barber" onclick="showBarberoForm()">
+      <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      Añadir nuevo barbero
+    </button>
+    <div id="bm-form-wrap"></div>`;
+  const grid=document.getElementById('bm-grid');
+  grid.innerHTML=barberos.map(b=>`<div class="bmcard">
+    <div class="bmphoto">${b.photo
+      ?`<img src="${b.photo}" alt="${b.name}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="bmphoto-init" style="display:none">${b.name[0]}</span>`
+      :`<span class="bmphoto-init">${b.name[0]}</span>`}
+    </div>
+    <div class="bminfo">
+      <div class="bmname">${b.name}</div>
+      <div class="bmrole">${b.role||'Barbero'}</div>
+      ${b.ig?`<div class="bmpin" style="color:var(--warm)">@${b.ig.replace('@','')}</div>`:''}
+      <div class="bmpin">PIN: <strong>${b.pin}</strong></div>
+    </div>
+    <div class="bmactions">
+      <button class="btn-mini" onclick="editBarbero('${b.id}')">Editar</button>
+      <button class="btn-mini" style="border-color:rgba(122,28,46,.35);color:var(--accent)" onclick="deleteBarbero('${b.id}')">Eliminar</button>
+    </div>
+  </div>`).join('');
+}
+
+function showBarberoForm(b){
+  editingBarberoId=b?b.id:null;
+  document.getElementById('bm-form-wrap').innerHTML=`<div class="bform">
+    <h4>${b?`Editando: ${b.name}`:'Nuevo barbero'}</h4>
+    <div class="frow2">
+      <div class="form-group"><label>Nombre completo *</label><input id="bf-name" value="${b?.name||''}" placeholder="Carlo Martínez"></div>
+      <div class="form-group"><label>Rol / Título</label><input id="bf-role" value="${b?.role||''}" placeholder="Master Barber"></div>
+    </div>
+    <div class="frow2">
+      <div class="form-group"><label>Especialidad</label><input id="bf-spec" value="${b?.spec||''}" placeholder="Fades y degradados"></div>
+      <div class="form-group"><label>Instagram (@handle)</label><input id="bf-ig" value="${b?.ig||''}" placeholder="@carlo.barber"></div>
+    </div>
+    <div class="form-group"><label>Foto (URL — postimages.org u otro host)</label><input id="bf-photo" value="${b?.photo||''}" placeholder="https://i.postimg.cc/..."></div>
+    ${b?.photo?`<div style="margin:-8px 0 14px;display:flex;align-items:center;gap:10px"><img src="${b.photo}" style="width:48px;height:48px;border-radius:50%;object-fit:cover;border:1px solid var(--border)" onerror="this.style.display='none'"><span style="font-size:13px;color:var(--muted);font-style:italic">Foto actual</span></div>`:''}
+    <div class="form-group"><label>PIN de acceso (solo números) *</label>
+      <input id="bf-pin" type="text" value="${b?.pin||''}" placeholder="Ej: 1234" maxlength="8" style="letter-spacing:4px;font-size:18px">
+    </div>
+    <div style="background:rgba(196,148,58,.08);border:1px solid rgba(196,148,58,.25);border-radius:var(--radius);padding:10px 14px;margin-bottom:14px;font-size:13px;color:var(--muted);font-style:italic">
+      El PIN lo usa el barbero para entrar a su panel personal desde "Acceso barberos" en el footer.
+    </div>
+    <div style="display:flex;gap:10px">
+      <button class="btn-gold" style="flex:1" onclick="saveBarberoForm()">Guardar barbero</button>
+      <button class="btn-outline" style="flex:0 0 auto;padding:0 24px;width:auto" onclick="document.getElementById('bm-form-wrap').innerHTML=''">Cancelar</button>
+    </div>
+  </div>`;
+  document.getElementById('bm-form-wrap').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function editBarbero(id){showBarberoForm(getBarberos().find(b=>b.id===id));}
+
+function deleteBarbero(id){
+  const b=getBarberos().find(x=>x.id===id);
+  if(!confirm(`¿Eliminar a ${b?.name}?\n\nSus reservas existentes no se borrarán, pero ya no aparecerá en el equipo ni en el formulario de reservas.`))return;
+  saveBarberos(getBarberos().filter(x=>x.id!==id));
+  renderBarberosTab();renderBarberosStep();buildTeam();
+}
+
+function saveBarberoForm(){
+  const name=document.getElementById('bf-name').value.trim();
+  const pin=document.getElementById('bf-pin').value.trim();
+  if(!name){alert('El nombre es obligatorio.');return;}
+  if(!pin){alert('El PIN es obligatorio. El barbero lo necesita para acceder a su panel.');return;}
+  if(!/^\d+$/.test(pin)){alert('El PIN debe contener solo números.');return;}
+  const barberos=getBarberos();
+  const data={
+    name,
+    role:document.getElementById('bf-role').value.trim(),
+    spec:document.getElementById('bf-spec').value.trim(),
+    ig:document.getElementById('bf-ig').value.trim().replace(/^@/,''),
+    photo:document.getElementById('bf-photo').value.trim(),
+    pin
+  };
+  if(editingBarberoId){
+    const idx=barberos.findIndex(b=>b.id===editingBarberoId);
+    if(idx>=0)barberos[idx]={...barberos[idx],...data};
+  } else {
+    barberos.push({id:'b'+Date.now(),...data});
+  }
+  saveBarberos(barberos);
+  editingBarberoId=null;
+  document.getElementById('bm-form-wrap').innerHTML='';
+  renderBarberosTab();renderBarberosStep();buildTeam();
+}
+
+// ── SERVICIOS ADMIN ──
+let editingSvcId=null;
+function renderServiciosAdmin(){
+  const svcs=getServicesStore();
+  const tab=document.getElementById('tab-servicios');
+  const vis=svcs.filter(s=>s.visible).length;
+  tab.innerHTML=`
+    <div class="adm-section-label">${svcs.length} servicio${svcs.length!==1?'s':''} — ${vis} visible${vis!==1?'s':''}</div>
+    <div class="svc-list">${svcs.map((s,i)=>`
+      <div class="svc-item${s.visible?'':' hidden-svc'}">
+        <div class="svc-item-icon">${iconSvg(s.icon)}</div>
+        <div class="svc-item-info">
+          <div class="svc-item-name">${s.name}</div>
+          <div class="svc-item-meta">${s.duration||''}${s.duration&&s.price?' · ':''}${s.price||''}</div>
+        </div>
+        <div class="bmactions" style="flex-direction:row;gap:6px">
+          <button class="btn-mini" onclick="svcToggle(${i})">${s.visible?'Ocultar':'Mostrar'}</button>
+          <button class="btn-mini" onclick="editSvc(${i})">Editar</button>
+          <button class="btn-mini" style="border-color:rgba(122,28,46,.35);color:var(--accent)" onclick="deleteSvc(${i})">Eliminar</button>
+        </div>
+      </div>`).join('')}
+    </div>
+    <button class="btn-add-barber" onclick="showSvcForm()">
+      <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      Añadir nuevo servicio
+    </button>
+    <div id="svc-form-wrap"></div>`;
+}
+
+function showSvcForm(s,idx){
+  editingSvcId=(idx!==undefined)?idx:null;
+  const iconKeys=Object.keys(ICONS);
+  const selectedIcon=s?.icon||'scissors';
+  document.getElementById('svc-form-wrap').innerHTML=`<div class="bform">
+    <h4>${s?`Editando: ${s.name}`:'Nuevo servicio'}</h4>
+    <div class="frow2">
+      <div class="form-group"><label>Nombre *</label><input id="sf-name" value="${s?.name||''}" placeholder="Corte Clásico"></div>
+      <div class="form-group"><label>Precio</label><input id="sf-price" value="${s?.price||''}" placeholder="$12.000"></div>
+    </div>
+    <div class="frow2">
+      <div class="form-group"><label>Duración</label><input id="sf-dur" value="${s?.duration||''}" placeholder="45 min"></div>
+      <div class="form-group"><label>Visible en la web</label>
+        <select id="sf-vis" style="width:100%;background:var(--bg);border:1px solid var(--border);color:var(--text);padding:12px 14px;border-radius:var(--radius);font-family:'Crimson Text',serif;font-size:16px;outline:none">
+          <option value="1" ${s?.visible!==false?'selected':''}>Sí — aparece en la web</option>
+          <option value="0" ${s?.visible===false?'selected':''}>No — oculto</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group"><label>Descripción</label><textarea id="sf-desc" style="width:100%;background:var(--bg);border:1px solid var(--border);color:var(--text);padding:12px 14px;border-radius:var(--radius);font-family:'Crimson Text',serif;font-size:15px;outline:none;height:80px;resize:none">${s?.desc||''}</textarea></div>
+    <div class="form-group">
+      <label>Ícono</label>
+      <div class="icon-picker" id="icon-picker">
+        ${iconKeys.map(k=>`<button class="icon-opt${k===selectedIcon?' selected':''}" onclick="selectIcon('${k}',this)" title="${k}">${iconSvg(k)}</button>`).join('')}
+      </div>
+      <input type="hidden" id="sf-icon" value="${selectedIcon}">
+    </div>
+    <div style="display:flex;gap:10px;margin-top:4px">
+      <button class="btn-gold" style="flex:1" onclick="saveSvcForm()">Guardar servicio</button>
+      <button class="btn-outline" style="flex:0 0 auto;padding:0 24px;width:auto" onclick="document.getElementById('svc-form-wrap').innerHTML=''">Cancelar</button>
+    </div>
+  </div>`;
+  document.getElementById('svc-form-wrap').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function selectIcon(key,btn){
+  document.getElementById('sf-icon').value=key;
+  document.querySelectorAll('.icon-opt').forEach(b=>b.classList.remove('selected'));
+  btn.classList.add('selected');
+}
+function editSvc(i){showSvcForm(getServicesStore()[i],i);}
+function svcToggle(i){const s=getServicesStore();s[i].visible=!s[i].visible;saveServicesStore(s);buildServices();renderServiciosAdmin();}
+function deleteSvc(i){
+  const s=getServicesStore();
+  if(!confirm(`¿Eliminar el servicio "${s[i].name}"?`))return;
+  s.splice(i,1);saveServicesStore(s);buildServices();renderServiciosAdmin();
+}
+function saveSvcForm(){
+  const name=document.getElementById('sf-name').value.trim();
+  if(!name){alert('El nombre del servicio es obligatorio.');return;}
+  const data={
+    name,
+    price:document.getElementById('sf-price').value.trim(),
+    duration:document.getElementById('sf-dur').value.trim(),
+    desc:document.getElementById('sf-desc').value.trim(),
+    icon:document.getElementById('sf-icon').value||'scissors',
+    visible:document.getElementById('sf-vis').value==='1',
+  };
+  const svcs=getServicesStore();
+  if(editingSvcId!==null&&editingSvcId!==undefined){
+    svcs[editingSvcId]={...svcs[editingSvcId],...data};
+  } else {
+    svcs.push({id:'sv'+Date.now(),...data});
+  }
+  saveServicesStore(svcs);editingSvcId=null;
+  document.getElementById('svc-form-wrap').innerHTML='';
+  buildServices();renderServiciosAdmin();
+}
+
+// ── GALERIA ADMIN ──
+function renderGaleriaAdmin(){
+  const g=getGalleryStore();
+  const tab=document.getElementById('tab-galeria');
+  const vis=g.filter(x=>x.visible).length;
+  tab.innerHTML=`<div class="adm-section-label">${vis} foto${vis!==1?'s':''} visible${vis!==1?'s':''} de ${g.length} total</div>
+  <div class="adm-photo-grid">${g.map((x,i)=>`<div class="adm-photo-item${x.visible?'':' hidden-photo'}">
+    <img src="${x.src}" alt="${x.tag||''}">
+    <div class="adm-photo-overlay">
+      <div class="adm-ibtn-top"><button class="adm-ibtn" onclick="galDelete(${i})" title="Eliminar">✕</button></div>
+      <div class="adm-ibtn-row"><button class="adm-ibtn" onclick="galToggle(${i})" title="${x.visible?'Ocultar':'Mostrar'}">${x.visible?'👁':'—'}</button></div>
+    </div></div>`).join('')}</div>
+  <div class="adm-section-label" style="margin-top:16px">Añadir foto (URL desde postimages.org u otro host de imágenes)</div>
+  <div class="adm-add-row"><input type="url" id="gal-url-inp" placeholder="https://i.postimg.cc/..."><button onclick="galAdd()">Añadir</button></div>`;
+}
+function galToggle(i){const g=getGalleryStore();g[i].visible=!g[i].visible;saveGalleryStore(g);buildGallery();renderGaleriaAdmin();}
+function galDelete(i){const g=getGalleryStore();if(!confirm('¿Eliminar esta foto de la galería?'))return;g.splice(i,1);saveGalleryStore(g);buildGallery();renderGaleriaAdmin();}
+function galAdd(){const inp=document.getElementById('gal-url-inp');const url=(inp?.value||'').trim();if(!url){alert('Ingresa una URL válida.');return;}const g=getGalleryStore();g.push({src:url,visible:true,tag:''});saveGalleryStore(g);buildGallery();renderGaleriaAdmin();}
+
+// ── HEADER ADMIN ──
+function renderHeaderAdmin(){
+  const h=getHeroStore();
+  const tab=document.getElementById('tab-header');
+  const vis=h.filter(x=>x.visible).length;
+  tab.innerHTML=`<div class="adm-section-label">${vis} imagen${vis!==1?'es':''} activa${vis!==1?'s':''} de ${h.length}${h.length>1?' — rotan automáticamente cada 4.5s':''}</div>
+  <div class="adm-photo-grid">${h.map((x,i)=>`<div class="adm-photo-item${x.visible?'':' hidden-photo'}" style="aspect-ratio:3/2">
+    <img src="${x.src}" alt="">
+    <div class="adm-photo-overlay">
+      <div class="adm-ibtn-top"><button class="adm-ibtn" onclick="heroDelete(${i})" title="Eliminar">✕</button></div>
+      <div class="adm-ibtn-row"><button class="adm-ibtn" onclick="heroToggle(${i})" title="${x.visible?'Ocultar':'Mostrar'}">${x.visible?'👁':'—'}</button></div>
+    </div></div>`).join('')}</div>
+  <div class="adm-section-label" style="margin-top:16px">Añadir imagen de fondo para el header</div>
+  <div class="adm-add-row"><input type="url" id="hero-url-inp" placeholder="https://..."><button onclick="heroAdd()">Añadir</button></div>`;
+}
+function heroToggle(i){const h=getHeroStore();h[i].visible=!h[i].visible;saveHeroStore(h);buildHero();renderHeaderAdmin();}
+function heroDelete(i){const h=getHeroStore();if(!confirm('¿Eliminar esta imagen del header?'))return;h.splice(i,1);saveHeroStore(h);buildHero();renderHeaderAdmin();}
+function heroAdd(){const inp=document.getElementById('hero-url-inp');const url=(inp?.value||'').trim();if(!url){alert('Ingresa una URL válida.');return;}const h=getHeroStore();h.push({src:url,visible:true});saveHeroStore(h);buildHero();renderHeaderAdmin();}
+
+// ── HORARIOS ADMIN ──
+function renderHorariosAdmin(){
+  const sc=getScheduleStore();
+  const days=[{val:1,label:'L'},{val:2,label:'M'},{val:3,label:'X'},{val:4,label:'J'},{val:5,label:'V'},{val:6,label:'S'},{val:0,label:'D'}];
+  const slotsPerDay=Math.floor(((sc.closeHour-sc.openHour)*60)/sc.slotMin);
+  const tab=document.getElementById('tab-horarios');
+  tab.innerHTML=`<div class="adm-section-label">Días de atención</div>
+  <div class="adm-days-row">${days.map(d=>`<button class="adm-day-btn${sc.openDays.includes(d.val)?' on':''}" onclick="scToggleDay(${d.val})">${d.label}</button>`).join('')}</div>
+  <div class="adm-section-label">Horario y duración de turnos</div>
+  <div class="adm-horarios-grid">
+    <div class="form-group"><label>Apertura</label><input type="time" id="sc-open" value="${String(sc.openHour).padStart(2,'0')}:00"></div>
+    <div class="form-group"><label>Cierre</label><input type="time" id="sc-close" value="${String(sc.closeHour).padStart(2,'0')}:00"></div>
+    <div class="form-group"><label>Turno (minutos)</label><input type="number" id="sc-slot" value="${sc.slotMin}" min="15" max="120" step="15"></div>
+  </div>
+  <button class="btn-gold" onclick="scSave()" style="max-width:200px">Guardar horarios</button>
+  <div class="adm-slot-preview">Con la configuración actual se generan <strong>${slotsPerDay} turnos</strong> por día (${String(sc.openHour).padStart(2,'0')}:00 – ${String(sc.closeHour).padStart(2,'0')}:00, cada ${sc.slotMin} min)</div>`;
+}
+function scToggleDay(val){
+  const sc=getScheduleStore();
+  const idx=sc.openDays.indexOf(val);
+  if(idx>=0)sc.openDays.splice(idx,1);else sc.openDays.push(val);
+  sc.openDays.sort((a,b)=>a===0?7:a-(b===0?7:b));
+  saveScheduleStore(sc);renderHorariosAdmin();
+}
+function scSave(){
+  const sc=getScheduleStore();
+  const openT=document.getElementById('sc-open').value;
+  const closeT=document.getElementById('sc-close').value;
+  const slot=parseInt(document.getElementById('sc-slot').value);
+  if(!openT||!closeT||isNaN(slot)||slot<15){alert('Verifica los valores ingresados.');return;}
+  sc.openHour=parseInt(openT.split(':')[0]);
+  sc.closeHour=parseInt(closeT.split(':')[0]);
+  sc.slotMin=slot;
+  if(sc.openHour>=sc.closeHour){alert('La apertura debe ser anterior al cierre.');return;}
+  saveScheduleStore(sc);renderHorariosAdmin();
+}
+
+// ── BARBER PANEL ──
+let currentBarber=null;
+let barberCalYear=new Date().getFullYear(),barberCalMonth=new Date().getMonth();
+let selectedBarberDay=null;
+
+function openBarberPanel(){
+  document.getElementById('barber-panel').classList.add('open');
+  const sel=document.getElementById('barber-select');
+  sel.innerHTML='<option value="">Selecciona tu nombre...</option>'+getBarberos().map(b=>`<option value="${b.id}">${b.name}</option>`).join('');
+  document.getElementById('barber-pin-input').value='';
+  document.getElementById('barber-login-error').style.display='none';
+}
+function closeBarberPanel(){
+  document.getElementById('barber-panel').classList.remove('open');
+  document.getElementById('barber-login').style.display='flex';
+  document.getElementById('barber-content').classList.remove('open');
+  currentBarber=null;selectedBarberDay=null;
+}
+function barberLogin(){
+  const id=document.getElementById('barber-select').value;
+  const pin=document.getElementById('barber-pin-input').value;
+  const b=getBarberos().find(x=>x.id===id);
+  if(!b||b.pin!==pin){document.getElementById('barber-login-error').style.display='block';return;}
+  currentBarber=b;
+  document.getElementById('barber-login').style.display='none';
+  document.getElementById('barber-content').classList.add('open');
+  document.getElementById('barber-name-header').textContent=b.name;
+  barberCalYear=new Date().getFullYear();barberCalMonth=new Date().getMonth();
+  selectedBarberDay=new Date().toISOString().split('T')[0];
+  renderBarberSummary();renderBarberCalendar();
+}
+function barberLogout(){closeBarberPanel();}
+function renderBarberSummary(){
+  const today=new Date().toISOString().split('T')[0];
+  const dr=getReservas().filter(r=>r.fecha===today&&r.barbero===currentBarber.name&&r.estado!=='cancelada');
+  const pend=dr.filter(r=>r.estado==='pendiente').length;
+  document.getElementById('barber-today-num').textContent=dr.length;
+  document.getElementById('barber-today-sub').textContent=`${pend} pendiente${pend!==1?'s':''}`;
+  document.getElementById('barber-pending-badge').textContent=pend;
+}
+function barberCalNav(dir){barberCalMonth+=dir;if(barberCalMonth<0){barberCalMonth=11;barberCalYear--;}if(barberCalMonth>11){barberCalMonth=0;barberCalYear++;}selectedBarberDay=null;document.getElementById('barber-day-panel').innerHTML='';renderBarberCalendar();}
+function renderBarberCalendar(){
+  const months=['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+  document.getElementById('barber-cal-month-label').textContent=`${months[barberCalMonth]} ${barberCalYear}`;
+  const grid=document.getElementById('barber-month-grid');grid.innerHTML='';
+  const today=new Date();today.setHours(0,0,0,0);
+  let firstDay=new Date(barberCalYear,barberCalMonth,1).getDay()-1;if(firstDay<0)firstDay=6;
+  const daysInPrev=new Date(barberCalYear,barberCalMonth,0).getDate();
+  const daysInMonth=new Date(barberCalYear,barberCalMonth+1,0).getDate();
+  const reservas=getReservas().filter(r=>r.barbero===currentBarber.name);
+  for(let i=firstDay-1;i>=0;i--){const c=document.createElement('div');c.className='admin-day adm-other';c.innerHTML=`<div class="adm-num">${daysInPrev-i}</div>`;grid.appendChild(c);}
+  for(let d=1;d<=daysInMonth;d++){
+    const dateStr=`${barberCalYear}-${String(barberCalMonth+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+    const date=new Date(barberCalYear,barberCalMonth,d);
+    const dr=reservas.filter(r=>r.fecha===dateStr&&r.estado!=='cancelada').sort((a,b)=>a.hora.localeCompare(b.hora));
+    const c=document.createElement('div');
+    c.className='admin-day'+(date.toDateString()===today.toDateString()?' adm-today':'')+(selectedBarberDay===dateStr?' adm-selected':'');
+    c.onclick=()=>{selectedBarberDay=dateStr;renderBarberCalendar();renderBarberDayPanel(dateStr);};
+    let chips=dr.slice(0,3).map(r=>`<span class="res-chip ${r.estado}">${r.hora} ${r.nombre}</span>`).join('');
+    if(dr.length>3)chips+=`<span class="res-chip chip-mas">+${dr.length-3} más</span>`;
+    c.innerHTML=`<div class="adm-num">${d}</div>${chips}`;
+    grid.appendChild(c);
+  }
+  if(selectedBarberDay)renderBarberDayPanel(selectedBarberDay);
+}
+function renderBarberDayPanel(dateStr){
+  const dr=getReservas().filter(r=>r.fecha===dateStr&&r.barbero===currentBarber.name&&r.estado!=='cancelada').sort((a,b)=>a.hora.localeCompare(b.hora));
+  const p=document.getElementById('barber-day-panel');
+  p.innerHTML=`<div class="admin-day-panel"><div class="admin-day-panel-title">${formatFecha(dateStr)}${dr.length?` — ${dr.length} turno${dr.length!==1?'s':''}`:'— Sin turnos'}</div><div id="bdp-cards"></div></div>`;
+  renderCards(dr,document.getElementById('bdp-cards'),false);
+}
+function markBarberComplete(id){const reservas=getReservas();const idx=reservas.findIndex(r=>r.id===id);if(idx>=0){reservas[idx].estado='completada';saveReservas(reservas);if(db)syncReservaEstado(id,'completada').catch(()=>{});}renderBarberSummary();renderBarberCalendar();}
+
+// ── FIREBASE + RESEND ──
+const FIREBASE_CONFIG_KEY=`barberia_firebase_config_${HANDLE}`;
+const OWNER_EMAIL_KEY=`barberia_owner_email_${HANDLE}`;
+let db=null;
+let fbApp=null;
+let fbListeners=[];
+
+function getFbConfig(){try{const raw=localStorage.getItem(FIREBASE_CONFIG_KEY);return raw?JSON.parse(raw):null;}catch{return null;}}
+function saveFbConfig(cfg){localStorage.setItem(FIREBASE_CONFIG_KEY,JSON.stringify(cfg));}
+function getOwnerEmail(){return localStorage.getItem(OWNER_EMAIL_KEY)||'';}
+function saveOwnerEmailLocal(email){localStorage.setItem(OWNER_EMAIL_KEY,email);}
+
+function parseFbConfigInput(raw){
+  try{
+    const cleaned=raw.trim();
+    // Puede ser JSON puro o el objeto JS con "const firebaseConfig = {...}"
+    const jsonMatch=cleaned.match(/\{[\s\S]*\}/);
+    if(!jsonMatch)return null;
+    // Convertir propiedades sin comillas a JSON válido
+    const jsonStr=jsonMatch[0].replace(/([{,]\s*)([a-zA-Z_][a-zA-Z0-9_]*)(\s*:)/g,'$1"$2"$3');
+    return JSON.parse(jsonStr);
+  }catch{return null;}
+}
+
+function connectFirebase(){
+  const raw=document.getElementById('fb-config-input').value;
+  const ownerEmail=document.getElementById('fb-owner-email').value.trim();
+  const alert=document.getElementById('fb-alert');
+  alert.style.display='none';
+  if(!raw.trim()){showFbAlert('Pega el objeto firebaseConfig primero.','error');return;}
+  if(!ownerEmail||!ownerEmail.includes('@')){showFbAlert('Ingresa el email del dueño para recibir notificaciones.','error');return;}
+  const cfg=parseFbConfigInput(raw);
+  if(!cfg||!cfg.apiKey||!cfg.projectId){showFbAlert('No pude leer el firebaseConfig. Verifica que sea correcto.','error');return;}
+  try{
+    // Desconectar listeners previos
+    fbListeners.forEach(u=>u());fbListeners=[];
+    if(typeof firebase==='undefined'){showFbAlert('Firebase SDK no cargó. Verifica tu conexión a internet.','error');return;}
+    // Inicializar app (o reutilizar si ya existe)
+    if(!fbApp){
+      try{fbApp=firebase.app();}catch{fbApp=firebase.initializeApp(cfg);}
+    }
+    db=firebase.firestore();
+    saveFbConfig(cfg);
+    saveOwnerEmailLocal(ownerEmail);
+    setupFirestoreListeners();
+    renderFirebaseAdmin();
+    showFbAlert('¡Conectado a Firebase! Los datos ahora se sincronizan en la nube.','success');
+  }catch(e){
+    showFbAlert('Error al conectar: '+e.message,'error');
+    db=null;
+  }
+}
+
+function disconnectFirebase(){
+  fbListeners.forEach(u=>u());fbListeners=[];
+  db=null;
+  localStorage.removeItem(FIREBASE_CONFIG_KEY);
+  renderFirebaseAdmin();
+}
+
+function setupFirestoreListeners(){
+  if(!db)return;
+  const col=(name)=>db.collection(`${HANDLE}_${name}`);
+
+  // Reservas
+  const u1=col('reservas').onSnapshot(snap=>{
+    const data=snap.docs.map(d=>({...d.data(),id:d.id}));
+    localStorage.setItem(STORAGE_KEY,JSON.stringify(data));
+    updatePendingCount();
+    if(currentAdminTab==='reservas'){renderStatsBar();renderAdminReservas(currentFilter);}
+  });
+  fbListeners.push(u1);
+
+  // Config collections
+  const syncConfig=(colName,lsKey,buildFn)=>{
+    const u=col(colName).orderBy('_order').onSnapshot(snap=>{
+      if(snap.empty)return;
+      const data=snap.docs.map(d=>{const d2={...d.data()};delete d2._order;return d2;});
+      localStorage.setItem(lsKey,JSON.stringify(data));
+      buildFn();
+    });
+    fbListeners.push(u);
+  };
+
+  syncConfig('gallery',GALLERY_KEY,buildGallery);
+  syncConfig('hero',HERO_KEY,buildHero);
+  syncConfig('services',SERVICES_KEY,buildServices);
+  syncConfig('barberos',BARBEROS_KEY,buildTeam);
+
+  // Schedule (documento único)
+  const u2=db.collection(`${HANDLE}_config`).doc('schedule').onSnapshot(snap=>{
+    if(!snap.exists)return;
+    const data=snap.data();
+    localStorage.setItem(SCHEDULE_KEY,JSON.stringify(data));
+  });
+  fbListeners.push(u2);
+}
+
+async function syncArrayToFirestore(colName,items){
+  if(!db)return;
+  const col=db.collection(`${HANDLE}_${colName}`);
+  const snap=await col.get();
+  const batch=db.batch();
+  snap.docs.forEach(d=>batch.delete(d.ref));
+  items.forEach((item,i)=>batch.set(col.doc(),{...item,_order:i}));
+  await batch.commit();
+}
+
+async function syncReservaToFirestore(reserva){
+  if(!db)return;
+  try{
+    await db.collection(`${HANDLE}_reservas`).doc(reserva.id).set(reserva);
+  }catch(e){console.warn('Firestore reserva sync:',e);}
+}
+
+async function syncReservaEstado(id,estado){
+  if(!db)return;
+  try{
+    await db.collection(`${HANDLE}_reservas`).doc(id).update({estado});
+  }catch(e){console.warn('Firestore estado sync:',e);}
+}
+
+async function syncScheduleToFirestore(schedule){
+  if(!db)return;
+  try{
+    await db.collection(`${HANDLE}_config`).doc('schedule').set(schedule);
+  }catch(e){console.warn('Firestore schedule sync:',e);}
+}
+
+// Email via Firebase Trigger Email Extension
+async function sendReservaEmail(reserva){
+  if(!db)return;
+  const ownerEmail=getOwnerEmail();
+  const clientEmail=reserva.email||'';
+  const batch=[];
+  if(ownerEmail){
+    batch.push({
+      to:ownerEmail,
+      message:{
+        subject:`Nueva reserva #${reserva.id} — ${reserva.barbero}`,
+        html:buildOwnerEmailHtml(reserva)
+      }
+    });
+  }
+  if(clientEmail){
+    batch.push({
+      to:clientEmail,
+      message:{
+        subject:`Reserva confirmada — ${reserva.servicio} en NOIR Barbershop`,
+        html:buildClientEmailHtml(reserva)
+      }
+    });
+  }
+  try{
+    const mailCol=db.collection('mail');
+    await Promise.all(batch.map(m=>mailCol.add(m)));
+  }catch(e){console.warn('Email send error:',e);}
+}
+
+function buildClientEmailHtml(r){
+  const fechaLeg=formatFecha(r.fecha);
+  const waLink=r.telefono?`https://wa.me/${r.telefono.replace(/\D/g,'')}`:'';
+  return `<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
+<body style="margin:0;padding:0;background:#f5f0e8;font-family:Georgia,'Times New Roman',serif">
+<table width="100%" cellpadding="0" cellspacing="0" style="background:#f5f0e8;padding:40px 16px">
+<tr><td align="center">
+<table width="520" cellpadding="0" cellspacing="0" style="max-width:520px;width:100%;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 4px 24px rgba(26,15,8,.10)">
+  <!-- HEADER -->
+  <tr><td style="background:#7a1c2e;padding:36px 40px;text-align:center">
+    <div style="display:inline-block;width:48px;height:1px;background:rgba(196,148,58,.5);margin-bottom:16px"></div>
+    <h1 style="margin:0;color:#f5f0e8;font-size:26px;letter-spacing:3px;font-weight:700">NOIR</h1>
+    <p style="margin:4px 0 0;color:rgba(245,240,232,.6);font-size:12px;letter-spacing:4px;text-transform:uppercase">Barbershop</p>
+    <div style="margin-top:16px;display:inline-block;width:48px;height:1px;background:rgba(196,148,58,.5)"></div>
+  </td></tr>
+  <!-- BADGE CONFIRMADO -->
+  <tr><td style="background:#c4943a;padding:10px 40px;text-align:center">
+    <p style="margin:0;color:#fff;font-size:12px;letter-spacing:2px;text-transform:uppercase">✓ Reserva Confirmada</p>
+  </td></tr>
+  <!-- BODY -->
+  <tr><td style="padding:36px 40px">
+    <p style="margin:0 0 24px;font-size:16px;color:#1a0f08;line-height:1.6">Hola <strong>${r.nombre}</strong>,<br>tu turno está confirmado. Te esperamos.</p>
+    <!-- TARJETA RESUMEN -->
+    <table width="100%" cellpadding="0" cellspacing="0" style="background:#f5f0e8;border-radius:6px;overflow:hidden;margin-bottom:24px">
+      <tr><td style="padding:20px 24px">
+        <table width="100%" cellpadding="0" cellspacing="0">
+          <tr>
+            <td style="padding:10px 0;border-bottom:1px solid #e4dcd0;color:#7a6255;font-size:13px;width:38%">Servicio</td>
+            <td style="padding:10px 0;border-bottom:1px solid #e4dcd0;color:#1a0f08;font-size:14px;font-weight:bold">${r.servicio}</td>
+          </tr>
+          <tr>
+            <td style="padding:10px 0;border-bottom:1px solid #e4dcd0;color:#7a6255;font-size:13px">Barbero</td>
+            <td style="padding:10px 0;border-bottom:1px solid #e4dcd0;color:#1a0f08;font-size:14px">${r.barbero}</td>
+          </tr>
+          <tr>
+            <td style="padding:10px 0;border-bottom:1px solid #e4dcd0;color:#7a6255;font-size:13px">Fecha</td>
+            <td style="padding:10px 0;border-bottom:1px solid #e4dcd0;color:#1a0f08;font-size:14px">${fechaLeg}</td>
+          </tr>
+          <tr>
+            <td style="padding:10px 0;border-bottom:1px solid #e4dcd0;color:#7a6255;font-size:13px">Hora</td>
+            <td style="padding:10px 0;border-bottom:1px solid #e4dcd0;color:#1a0f08;font-size:16px;font-weight:bold;color:#7a1c2e">${r.hora} hrs</td>
+          </tr>
+          <tr>
+            <td style="padding:10px 0;color:#7a6255;font-size:13px">Código</td>
+            <td style="padding:10px 0;color:#7a6255;font-size:12px;letter-spacing:1px">${r.id}</td>
+          </tr>
+        </table>
+      </td></tr>
+    </table>
+    ${r.nota?`<p style="margin:0 0 24px;font-size:13px;color:#7a6255;font-style:italic;padding:12px 16px;background:#fdf8f0;border-left:3px solid #c4943a;border-radius:0 4px 4px 0">📝 ${r.nota}</p>`:''}
+    <p style="margin:0;font-size:13px;color:#7a6255;line-height:1.7">Si necesitas cancelar o cambiar el horario, escríbenos con anticipación.</p>
+  </td></tr>
+  <!-- FOOTER -->
+  <tr><td style="background:#f5f0e8;padding:20px 40px;text-align:center;border-top:1px solid #e4dcd0">
+    <p style="margin:0;font-size:11px;color:#aaa;letter-spacing:1px">NOIR Barbershop · Providencia, Santiago</p>
+  </td></tr>
+</table>
+</td></tr>
+</table>
+</body></html>`;
+}
+
+function buildOwnerEmailHtml(r){
+  const fechaLeg=formatFecha(r.fecha);
+  const waTel=r.telefono?r.telefono.replace(/\D/g,''):'';
+  const waLink=waTel?`https://wa.me/${waTel}?text=${encodeURIComponent(`Hola ${r.nombre}! Te confirmo tu reserva del ${fechaLeg} a las ${r.hora}.`)}`:'';
+  return `<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
+<body style="margin:0;padding:0;background:#1a0f08;font-family:Georgia,'Times New Roman',serif">
+<table width="100%" cellpadding="0" cellspacing="0" style="background:#1a0f08;padding:32px 16px">
+<tr><td align="center">
+<table width="520" cellpadding="0" cellspacing="0" style="max-width:520px;width:100%;background:#fff;border-radius:8px;overflow:hidden">
+  <!-- HEADER -->
+  <tr><td style="background:#7a1c2e;padding:24px 32px;display:flex;align-items:center;justify-content:space-between">
+    <div>
+      <h2 style="margin:0;color:#f5f0e8;font-size:16px;letter-spacing:2px;text-transform:uppercase">Nueva reserva</h2>
+      <p style="margin:4px 0 0;color:rgba(245,240,232,.55);font-size:12px">NOIR Barbershop · Admin</p>
+    </div>
+  </td></tr>
+  <!-- ALERTA ACCIÓN -->
+  <tr><td style="background:#c4943a;padding:8px 32px">
+    <p style="margin:0;color:#fff;font-size:12px;letter-spacing:1px">⚡ Nueva reserva — acción requerida</p>
+  </td></tr>
+  <!-- BODY -->
+  <tr><td style="padding:28px 32px">
+    <table width="100%" cellpadding="0" cellspacing="0">
+      <tr><td style="padding:9px 0;border-bottom:1px solid #f0ece4;color:#7a6255;font-size:12px;width:36%;text-transform:uppercase;letter-spacing:.5px">ID</td>
+          <td style="padding:9px 0;border-bottom:1px solid #f0ece4;color:#7a6255;font-size:12px;font-family:monospace">${r.id}</td></tr>
+      <tr><td style="padding:9px 0;border-bottom:1px solid #f0ece4;color:#7a6255;font-size:12px;text-transform:uppercase;letter-spacing:.5px">Cliente</td>
+          <td style="padding:9px 0;border-bottom:1px solid #f0ece4;color:#1a0f08;font-size:15px;font-weight:bold">${r.nombre}</td></tr>
+      <tr><td style="padding:9px 0;border-bottom:1px solid #f0ece4;color:#7a6255;font-size:12px;text-transform:uppercase;letter-spacing:.5px">Teléfono</td>
+          <td style="padding:9px 0;border-bottom:1px solid #f0ece4;color:#1a0f08;font-size:14px">${r.telefono||'—'}</td></tr>
+      <tr><td style="padding:9px 0;border-bottom:1px solid #f0ece4;color:#7a6255;font-size:12px;text-transform:uppercase;letter-spacing:.5px">Servicio</td>
+          <td style="padding:9px 0;border-bottom:1px solid #f0ece4;color:#1a0f08;font-size:14px;font-weight:bold">${r.servicio}</td></tr>
+      <tr><td style="padding:9px 0;border-bottom:1px solid #f0ece4;color:#7a6255;font-size:12px;text-transform:uppercase;letter-spacing:.5px">Barbero</td>
+          <td style="padding:9px 0;border-bottom:1px solid #f0ece4;color:#7a1c2e;font-size:14px;font-weight:bold">${r.barbero}</td></tr>
+      <tr><td style="padding:9px 0;border-bottom:1px solid #f0ece4;color:#7a6255;font-size:12px;text-transform:uppercase;letter-spacing:.5px">Fecha</td>
+          <td style="padding:9px 0;border-bottom:1px solid #f0ece4;color:#1a0f08;font-size:14px">${fechaLeg}</td></tr>
+      <tr><td style="padding:9px 0;${r.nota?'border-bottom:1px solid #f0ece4;':''}color:#7a6255;font-size:12px;text-transform:uppercase;letter-spacing:.5px">Hora</td>
+          <td style="padding:9px 0;${r.nota?'border-bottom:1px solid #f0ece4;':''}color:#1a0f08;font-size:18px;font-weight:bold">${r.hora} hrs</td></tr>
+      ${r.nota?`<tr><td style="padding:9px 0;color:#7a6255;font-size:12px;text-transform:uppercase;letter-spacing:.5px">Nota</td>
+          <td style="padding:9px 0;color:#1a0f08;font-size:13px;font-style:italic">${r.nota}</td></tr>`:''}
+    </table>
+    ${waLink?`
+    <div style="margin-top:24px;text-align:center">
+      <a href="${waLink}" style="display:inline-block;background:#25d366;color:#fff;text-decoration:none;padding:12px 28px;border-radius:4px;font-size:14px;font-family:Georgia,serif;letter-spacing:.5px">💬 Escribir por WhatsApp</a>
+    </div>`:''}
+  </td></tr>
+  <!-- FOOTER -->
+  <tr><td style="background:#f5f0e8;padding:16px 32px;text-align:center">
+    <p style="margin:0;font-size:11px;color:#aaa">NOIR Barbershop · Panel de administración</p>
+  </td></tr>
+</table>
+</td></tr>
+</table>
+</body></html>`;
+}
+
+function showFbAlert(msg,type){
+  const el=document.getElementById('fb-alert');
+  if(!el)return;
+  el.textContent=msg;
+  el.className='fb-alert '+type;
+  el.style.display='block';
+  setTimeout(()=>{el.style.display='none';},5000);
+}
+
+function renderFirebaseAdmin(){
+  const tab=document.getElementById('tab-firebase');
+  const connected=!!db;
+  const cfg=getFbConfig();
+  const ownerEmail=getOwnerEmail();
+  const statusLabel=connected?'Conectado':'Sin conexión';
+  const statusClass=connected?'connected':'disconnected';
+  tab.innerHTML=`
+<div class="adm-section-label">Sincronización en la nube · Firebase + Resend</div>
+<div>
+  <span class="fb-status-badge ${statusClass}"><span class="fb-dot"></span>${statusLabel}</span>
+</div>
+<div id="fb-alert" class="fb-alert"></div>
+
+${connected?`
+<div class="fb-section">
+  <h4>Estado de la conexión</h4>
+  <ul class="fb-checklist">
+    <li><span class="fb-check-icon">✅</span> Conectado a proyecto <strong>${cfg?cfg.projectId:'—'}</strong></li>
+    <li><span class="fb-check-icon">✅</span> Reservas sincronizando en tiempo real</li>
+    <li><span class="fb-check-icon">✅</span> Galería, header, servicios y barberos sincronizados</li>
+    <li><span class="fb-check-icon">${ownerEmail?'✅':'⚠️'}</span> Email del dueño: <strong>${ownerEmail||'no configurado'}</strong></li>
+    <li><span class="fb-check-icon">ℹ️</span> Emails se envían si tienes Trigger Email instalado en Firebase</li>
+  </ul>
+  <div style="margin-top:20px;padding-top:16px;border-top:1px solid var(--border)">
+    <p style="font-size:13px;color:var(--muted);margin-bottom:12px;font-family:'Crimson Text',serif">Para que Firebase funcione en Netlify u otro hosting, descarga el HTML con la configuración ya embebida:</p>
+    <button class="fb-btn-primary" onclick="descargarHtmlListo()" style="font-size:15px;padding:12px 28px">⬇ Descargar HTML listo para subir</button>
+    <p class="fb-hint" style="margin-top:8px">Este archivo incluye Firebase conectado — solo arrástralo a Netlify Drop.</p>
+  </div>
+  <div style="margin-top:12px">
+    <button class="fb-btn-secondary" onclick="disconnectFirebase()">Desconectar Firebase</button>
+  </div>
+</div>
+<div class="fb-section">
+  <h4>Actualizar email de notificaciones</h4>
+  <div class="fb-field">
+    <label class="fb-label">Email del dueño (recibe notificación de cada reserva)</label>
+    <input type="email" class="fb-input" id="fb-owner-email-update" value="${ownerEmail}" placeholder="hola@minegocio.com">
+  </div>
+  <button class="fb-btn-primary" onclick="saveOwnerEmail()">Guardar email</button>
+</div>
+`:`
+<div class="fb-section">
+  <h4>Conectar a Firebase</h4>
+  <p style="font-size:13px;color:var(--muted);margin-bottom:16px;font-family:'Crimson Text',serif">
+    Pega aquí tu <code style="background:var(--bg3);padding:1px 5px;border-radius:3px;font-size:12px">firebaseConfig</code> de la consola de Firebase.
+    Es seguro — este objeto está diseñado para ser público.
+  </p>
+  <div class="fb-field">
+    <label class="fb-label">firebaseConfig (pega el objeto JS o JSON)</label>
+    <textarea class="fb-textarea" id="fb-config-input" placeholder='const firebaseConfig = {
+  apiKey: "AIza...",
+  authDomain: "mi-barberia.firebaseapp.com",
+  projectId: "mi-barberia",
+  storageBucket: "mi-barberia.appspot.com",
+  messagingSenderId: "123456",
+  appId: "1:123456:web:abc123"
+};'></textarea>
+    <p class="fb-hint">Lo encuentras en Firebase Console → Configuración del proyecto → Tu app web</p>
+  </div>
+  <div class="fb-field">
+    <label class="fb-label">Email del dueño (recibe notificación de cada nueva reserva)</label>
+    <input type="email" class="fb-input" id="fb-owner-email" value="${ownerEmail}" placeholder="hola@minegocio.com">
+    <p class="fb-hint">Solo para notificaciones — no es tu cuenta de Google</p>
+  </div>
+  <button class="fb-btn-primary" onclick="connectFirebase()">Conectar Firebase</button>
+</div>
+
+<div class="fb-section">
+  <h4>Cómo configurar Firebase (guía rápida)</h4>
+  <ol style="font-size:13px;font-family:'Crimson Text',serif;color:var(--text);padding-left:18px;line-height:2">
+    <li>Ve a <strong>console.firebase.google.com</strong> y crea un proyecto nuevo</li>
+    <li>En el proyecto, agrega una <strong>app Web</strong> (icono &lt;/&gt;)</li>
+    <li>Copia el objeto <code style="background:var(--bg3);padding:1px 4px;border-radius:3px">firebaseConfig</code> y pégalo arriba</li>
+    <li>En la consola, habilita <strong>Cloud Firestore</strong> en modo producción</li>
+    <li>En Reglas de Firestore, agrega: <code style="background:var(--bg3);padding:1px 4px;border-radius:3px;font-size:11px">allow read, write: if true;</code> (para empezar)</li>
+    <li>Para emails: instala la extensión <strong>Trigger Email</strong> con las credenciales SMTP de Resend</li>
+  </ol>
+</div>
+
+<div class="fb-section">
+  <h4>Cómo configurar Resend para emails</h4>
+  <ol style="font-size:13px;font-family:'Crimson Text',serif;color:var(--text);padding-left:18px;line-height:2">
+    <li>Crea cuenta en <strong>resend.com</strong> (gratis hasta 3.000 emails/mes)</li>
+    <li>Genera una API Key en el dashboard de Resend</li>
+    <li>En Firebase Console → Extensions → <strong>Trigger Email</strong></li>
+    <li>En "SMTP connection URI", ingresa: <code style="background:var(--bg3);padding:1px 4px;border-radius:3px;font-size:11px">smtps://resend:TU_API_KEY@smtp.resend.com:465</code></li>
+    <li>La API Key queda guardada en Firebase — <strong>nunca en este HTML</strong></li>
+  </ol>
+  <p style="font-size:12px;color:var(--muted);font-style:italic;margin-top:8px">⚠️ La API Key de Resend es privada. Nunca la pegues en el HTML.</p>
+</div>
+`}`;
+}
+
+function saveOwnerEmail(){
+  const email=document.getElementById('fb-owner-email-update').value.trim();
+  if(!email||!email.includes('@')){showFbAlert('Email inválido.','error');return;}
+  saveOwnerEmailLocal(email);
+  showFbAlert('Email guardado.','success');
+  renderFirebaseAdmin();
+}
+
+function descargarHtmlListo(){
+  const cfg=getFbConfig();
+  const ownerEmail=getOwnerEmail();
+  if(!cfg){showFbAlert('Conecta Firebase primero.','error');return;}
+  // Obtener el HTML actual como texto
+  const html=document.documentElement.outerHTML;
+  // Reemplazar las constantes placeholder por los valores reales
+  const cfgStr=JSON.stringify(cfg,null,2);
+  const htmlFinal=html
+    .replace('const FIREBASE_CONFIG_EMBED=null;',`const FIREBASE_CONFIG_EMBED=${cfgStr};`)
+    .replace("const OWNER_EMAIL_EMBED='';",`const OWNER_EMAIL_EMBED=${JSON.stringify(ownerEmail)};`);
+  // Crear descarga
+  const blob=new Blob([htmlFinal],{type:'text/html;charset=utf-8'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  a.href=url;
+  a.download=`web-${HANDLE}.html`;
+  a.click();
+  URL.revokeObjectURL(url);
+  showFbAlert('¡Descargado! Sube ese archivo a Netlify — Firebase ya está configurado dentro.','success');
+}
+
+// ── INIT ──
+buildHero();
+buildGallery();
+buildTeam();
+buildServices();
+initCal();
+renderBarberosStep();
+// Auto-reconectar Firebase (config embebida tiene prioridad sobre localStorage)
+window.addEventListener('load',function(){
+  if(typeof firebase==='undefined')return;
+  // Si hay config embebida en el HTML, úsala directamente
+  if(FIREBASE_CONFIG_EMBED){
+    saveFbConfig(FIREBASE_CONFIG_EMBED);
+    if(OWNER_EMAIL_EMBED)saveOwnerEmailLocal(OWNER_EMAIL_EMBED);
+  }
+  const cfg=getFbConfig();
+  if(!cfg)return;
+  try{
+    try{fbApp=firebase.app();}catch{fbApp=firebase.initializeApp(cfg);}
+    db=firebase.firestore();
+    setupFirestoreListeners();
+    console.log('Firebase conectado'+(FIREBASE_CONFIG_EMBED?' (config embebida)':' (localStorage)'));
+  }catch(e){console.warn('Firebase auto-reconnect failed:',e);db=null;}
+});
+</script>
+<!-- Firebase SDK (compat v9) -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
+
+</body></html>
